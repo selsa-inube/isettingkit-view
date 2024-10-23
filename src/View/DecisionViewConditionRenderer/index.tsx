@@ -8,6 +8,7 @@ import {
 import { DynamicViewField } from "../DynamicViewField";
 import { ViewRangeField } from "../ViewRangeField";
 import { ViewMultipleChoices } from "../ViewMultipleChoices";
+import React from "react";
 
 interface IDecisionViewConditionRenderer {
   element: IDecision | ICondition;
@@ -50,11 +51,11 @@ const DecisionViewConditionRenderer = (
       return (
         <ViewRangeField
           label={element.label}
-          labelFrom={valueRangeInput.labelFrom}
-          labelTo={valueRangeInput.labelTo}
+          labelFrom={valueRangeInput.labelFrom || element.label}
+          labelTo={valueRangeInput.labelTo || element.label}
           typeInput={element.typeData}
-          valueFrom={valueRangeInput.rangeFrom}
-          valueTo={valueRangeInput.rangeTo}
+          valueFrom={valueRangeInput.rangeFrom || 0}
+          valueTo={valueRangeInput.rangeTo || 0}
         />
       );
 
