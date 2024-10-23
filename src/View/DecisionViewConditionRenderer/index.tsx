@@ -1,15 +1,17 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { ICondition, IDecision, ValueHowToSetUp } from "@isettingkit/input";
+import {
+  ICondition,
+  IDecision,
+  IValue,
+  ValueHowToSetUp,
+} from "@isettingkit/input";
 import { DynamicViewField } from "../DynamicViewField";
 import { ViewRangeField } from "../ViewRangeField";
 import { ViewMultipleChoices } from "../ViewMultipleChoices";
 
 interface IDecisionViewConditionRenderer {
   element: IDecision | ICondition;
-  valueData:
-    | string
-    | number
-    | { rangeFrom?: number | undefined; rangeTo?: number | undefined };
+  valueData: string | number | IValue;
 }
 
 const DecisionViewConditionRenderer = (
