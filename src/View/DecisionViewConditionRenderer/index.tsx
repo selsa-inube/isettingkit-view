@@ -21,12 +21,14 @@ const DecisionViewConditionRenderer = (
   const name = element.name.replace(" ", "");
   const value: any = element.value;
   let valueRangeInput;
+  const selectedList = Array.isArray(valueData) ? valueData : [];
+
   const options =
     value && Array.isArray(value.list)
       ? value.list.map((item: string) => ({
           id: item,
           label: item,
-          checked: value.listSelected?.includes(item),
+          checked: selectedList.includes(item),
         }))
       : [];
 
