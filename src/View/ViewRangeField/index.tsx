@@ -5,8 +5,8 @@ import { formatValue } from "@isettingkit/input";
 
 interface IViewRangeField {
   label: string;
-  labelFrom: string;
-  labelTo: string;
+  labelFrom?: string;
+  labelTo?: string;
   typeInput: ITextfieldInputType;
   valueFrom?: string | number;
   valueTo?: string | number;
@@ -25,8 +25,8 @@ declare const inputTypes: readonly [
 const ViewRangeField = (props: IViewRangeField) => {
   const {
     label,
-    labelFrom,
-    labelTo,
+    labelFrom = "",
+    labelTo = "",
     typeInput,
     valueFrom = 0,
     valueTo = 0,

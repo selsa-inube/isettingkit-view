@@ -50,11 +50,11 @@ const DecisionViewConditionRenderer = (
       return (
         <ViewRangeField
           label={element.label}
-          labelFrom={valueRangeInput.labelFrom!}
-          labelTo={valueRangeInput.labelTo!}
+          labelFrom={valueRangeInput.labelFrom}
+          labelTo={valueRangeInput.labelTo}
           typeInput={element.typeData}
-          valueFrom={valueRangeInput.rangeFrom!}
-          valueTo={valueRangeInput.rangeTo!}
+          valueFrom={valueRangeInput.rangeFrom}
+          valueTo={valueRangeInput.rangeTo}
         />
       );
 
