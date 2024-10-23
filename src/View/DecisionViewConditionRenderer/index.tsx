@@ -8,7 +8,6 @@ import {
 import { DynamicViewField } from "../DynamicViewField";
 import { ViewRangeField } from "../ViewRangeField";
 import { ViewMultipleChoices } from "../ViewMultipleChoices";
-import React from "react";
 
 interface IDecisionViewConditionRenderer {
   element: IDecision | ICondition;
