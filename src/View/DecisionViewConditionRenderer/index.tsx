@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import {
   ICondition,
   IDecision,
@@ -19,18 +18,14 @@ const DecisionViewConditionRenderer = (
 ) => {
   const { element, valueData } = props;
   const name = element.name.replace(" ", "");
-  const value: any = element.value;
+
   let valueRangeInput;
   const selectedList = Array.isArray(valueData) ? valueData : [];
-
-  const options =
-    value && Array.isArray(value.list)
-      ? value.list.map((item: string) => ({
-          id: item,
-          label: item,
-          checked: selectedList.includes(item),
-        }))
-      : [];
+  const options = selectedList.map((item: string, index: number) => ({
+    id: String(index + 1),
+    label: item,
+    checked: true,
+  }));
 
   switch (element.howToSetUp) {
     case ValueHowToSetUp.LIST_OF_VALUES_MULTI:
@@ -51,9 +46,8 @@ const DecisionViewConditionRenderer = (
       };
       return (
         <ViewRangeField
-          label={element.label}
-          labelFrom={valueRangeInput.labelFrom || element.label}
-          labelTo={valueRangeInput.labelTo || element.label}
+          labelFrom={valueRangeInput.labelFrom || `Minimum ${element.label}`}
+          labelTo={valueRangeInput.labelTo || `Maximum ${element.label}`}
           typeInput={element.typeData}
           valueFrom={valueRangeInput.rangeFrom || 0}
           valueTo={valueRangeInput.rangeTo || 0}

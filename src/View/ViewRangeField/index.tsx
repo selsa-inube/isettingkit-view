@@ -4,7 +4,6 @@ import { Text } from "@inubekit/text";
 import { formatValue } from "@isettingkit/input";
 
 interface IViewRangeField {
-  label: string;
   labelFrom?: string;
   labelTo?: string;
   typeInput: ITextfieldInputType;
@@ -24,7 +23,6 @@ declare const inputTypes: readonly [
 
 const ViewRangeField = (props: IViewRangeField) => {
   const {
-    label,
     labelFrom = "",
     labelTo = "",
     typeInput,
@@ -34,9 +32,6 @@ const ViewRangeField = (props: IViewRangeField) => {
 
   return (
     <Stack direction="column" gap="2px">
-      <Text type="label" weight="bold" size="small" appearance="gray">
-        {label}
-      </Text>
       <Grid templateColumns="repeat(2, 1fr)" margin="10px 0" gap="12px">
         <Stack direction="column" gap="2px">
           <Text type="label" weight="bold" size="small" appearance="gray">
