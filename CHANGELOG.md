@@ -1,3 +1,15 @@
+# v0.1.8 (Thu Oct 24 2024)
+
+#### ⚠️ Pushed to `main`
+
+- fix: adjustment in ordet to replace the grid by stack to get the right space ([@cmarin001](https://github.com/cmarin001))
+
+#### Authors: 1
+
+- Cesar Marin Alfonso ([@cmarin001](https://github.com/cmarin001))
+
+---
+
 # v0.1.7 (Thu Oct 24 2024)
 
 #### ⚠️ Pushed to `main`
