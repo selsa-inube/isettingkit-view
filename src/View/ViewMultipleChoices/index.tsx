@@ -1,5 +1,4 @@
 import { Tag } from "@inubekit/tag";
-import { Grid } from "@inubekit/grid";
 import { Stack } from "@inubekit/stack";
 import { Text } from "@inubekit/text";
 
@@ -23,21 +22,19 @@ const ViewMultipleChoices = (props: ViewMultipleChoicesProps) => {
       <Text type="label" weight="bold" size="small" appearance="gray">
         {label}
       </Text>
-      <Grid
-        templateColumns="repeat(auto-fit, minmax(78px, 1fr))"
-        autoRows="minmax(16px, auto)"
-        gap="10px"
-      >
+      <Stack wrap="wrap" gap="10px">
         {options.map((option) => (
-          <Tag
-            id={id + option.id}
-            key={option.id}
-            label={option.label}
-            weight="strong"
-            appearance="primary"
-          />
+          <Stack width="fit-content">
+            <Tag
+              id={id + option.id}
+              key={option.id}
+              label={option.label}
+              appearance="primary"
+              weight="normal"
+            />
+          </Stack>
         ))}
-      </Grid>
+      </Stack>
     </Stack>
   );
 };
