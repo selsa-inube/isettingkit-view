@@ -1,3 +1,16 @@
+# v0.1.7 (Thu Oct 24 2024)
+
+#### ⚠️ Pushed to `main`
+
+- Merge branch 'main' of https://github.com/selsa-inube/isettingkit-view ([@cmarin001](https://github.com/cmarin001))
+- fix: adjust types ([@cmarin001](https://github.com/cmarin001))
+
+#### Authors: 1
+
+- Cesar Marin Alfonso ([@cmarin001](https://github.com/cmarin001))
+
+---
+
 # v0.1.6 (Thu Oct 24 2024)
 
 #### ⚠️ Pushed to `main`
