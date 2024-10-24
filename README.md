@@ -1,38 +1,118 @@
-# IDS - Starter
+# 📦 isettingkit-view: UI Components Library
 
-This project is a starter repository that can be used to develop and publish new Inube Design System components. With this repository the intention is that any design-system team member can start to develop a new component without starting from scratch.
+## Overview
 
-## Readme
+The **`isettingkit-view`** library is designed to provide reusable, flexible, and lightweight UI components for handling various aspects of business rules in frontend applications. These components help streamline the development process by offering pre-built elements that can handle dynamic views, multiple choices, and range-based inputs.
 
-This readme contains the details of usage of the starter. Once you create a new repo based in this template in github, please change the content of the README and make it relatable to the component you are creating.
+This documentation outlines the key components of the library and explains their usage. You can visualize how these components work using **Storybook**, which allows developers to test and see the UI in action before integrating it into larger applications.
 
-## Instructions of usage
+---
 
-### Package.json
+## 📚 Components
 
-1. **name**: As you can see in the package.json file, the name of this package is "ids-starter". Please rename the name when you start your new project. Remember that all components are publish by the @inubekit organization in npm, so rename the package as @inubekit/{new-component-name}
-2. **description**: Complete the description about the component you are creating.
+### 1. `DecisionViewConditionRenderer`
 
-### Environment variables
+#### Description
+`DecisionViewConditionRenderer` is a conditional rendering component that dynamically renders the appropriate UI component based on the `howToSetUp` value of an element. It supports various display options like multi-choice lists, range inputs, and single value comparisons.
 
-1. In order to control releases and package publishing, you will need to have a .env file with some environment variables.
-2. `GH_TOKEN`: Create this token in github.com, using your profile settings. This token requires the **repo** scope.
-3. `NPM_TOKEN`: Create this token in npmjs.com. You must ask the admin to add you as a organization admin prior to publish the package in npm.
+#### Props
+- **element** (`IDecision | ICondition`): The element containing the data for decision or condition rendering.
+- **valueData** (`string | string[] | number | IValue | undefined`): The actual data to be displayed or processed by the component.
 
-### Pull Requests
+#### Usage Example
+```tsx
+<DecisionViewConditionRenderer
+  element={element}
+  valueData={valueData}
+/>
+```
 
-1. All PRs must have a semver label attached to it. This is the way the publishing and versioning process will use to know if a PR demands a major, minor or patch version to be created.
-2. To have these labels available, please run `npm run auto create-labels` to create them (you need to have already your `GH_TOKEN` in .env in order to make this command work).
+### 2. `DynamicViewField`
 
-### Publishing
+#### Description
+`DynamicViewField` is a component used to display a simple label and formatted value. It adapts based on the type of input (e.g., alphabetical, date, currency, etc.).
 
-Follow these steps to publish and release a new version of your package.
+#### Props
+- **type** (`ITextfieldInputType`): The type of the input to format the displayed value. Supported types: `"alphabetical"`, `"date"`, `"currency"`, `"number"`, `"percentage"`.
+- **label** (`string`): The label to be shown alongside the value.
+- **valueInput** (`number | string`): The value to be formatted and displayed.
 
-Check that you're an admin in the repository (validate with your team leader) and **execute these scripts in a release branch**.
+#### Usage Example
+```tsx
+<DynamicViewField
+  type="currency"
+  label="Total Amount"
+  valueInput={12345}
+/>
+```
 
-1. `npm run changelog`: this command will create a changelog for you, including in the document the changes that the current release will publish in the new version of the package and what should be the version number of the release. The number is calculated using the labels of all the PRs that are included in this new version (see the Pull Requests details above).
-2. `npm version <new-version>`: this command creates the new version (tag), deletes the /dist folder in your project and executes the build of the project and its files are stored in a new /dist folder.
-3. `git push -u origin <branch>`: this command pushes the commits of changelog and package.json with the new version to github.
-4. `npm run release`: this command executes a git push with the new version tag included and creates a new release in Github. **This step requires that you have your `GH_TOKEN` working**.
-5. `npm login`: you must be logged in with npm to continue the process.
-6. `npm publish`: with the new build already in /dist, you can now execute this command and the new package version will be published in npm. **This command requires tat you have you `NPM_TOKEN` working.** _Note_: if this first time you are publishing you should add `--access=public` flag to the command
+### 3. `ViewMultipleChoices`
+
+#### Description
+`ViewMultipleChoices` is a component that renders a list of choices (typically as tags) where multiple values can be selected.
+
+#### Props
+- **id** (`string`): The unique ID for the component.
+- **label** (`string`): The label to describe the choices being presented.
+- **options** (`IOptionItemChecked[]`): The array of options, where each option contains `id`, `label`, and `checked` (optional).
+
+#### Usage Example
+```tsx
+const options = [
+  { id: "1", label: "Option 1", checked: true },
+  { id: "2", label: "Option 2", checked: false },
+];
+
+<ViewMultipleChoices
+  id="multiChoice"
+  label="Select Options"
+  options={options}
+/>
+```
+
+### 4. `ViewRangeField`
+
+#### Description
+`ViewRangeField` is a component for rendering a field that displays a range (from a minimum to a maximum value), ideal for showing value ranges in business rules.
+
+#### Props
+- **labelFrom** (`string?`): The label for the minimum value. Default is an empty string.
+- **labelTo** (`string?`): The label for the maximum value. Default is an empty string.
+- **typeInput** (`ITextfieldInputType`): The type of input value (e.g., `"number"`, `"currency"`, etc.).
+- **valueFrom** (`string | number?`): The minimum value to display. Default is `0`.
+- **valueTo** (`string | number?`): The maximum value to display. Default is `0`.
+
+#### Usage Example
+```tsx
+<ViewRangeField
+  labelFrom="Minimum Value"
+  labelTo="Maximum Value"
+  typeInput="number"
+  valueFrom={10}
+  valueTo={100}
+/>
+```
+
+## 🚀 How to Use
+
+To get started with the **`isettingkit-view`** library, follow these steps:
+
+### 1. Installation
+Install the library using npm:
+```bash
+npm install isettingkit-view
+```
+
+### 2. Import Components
+Once installed, you can import and use the components like this:
+```tsx
+import { ViewMultipleChoices, ViewRangeField, DynamicViewField, DecisionViewConditionRenderer } from 'isettingkit-view';
+```
+
+### 3. Storybook Integration
+To visualize the components in action, we use Storybook. Storybook allows developers to interact with the components in isolation, view different states, and confirm that they behave as expected.
+
+You can run Storybook for this library by navigating to the project folder and using the following command:
+```bash
+npm run storybook
+```
