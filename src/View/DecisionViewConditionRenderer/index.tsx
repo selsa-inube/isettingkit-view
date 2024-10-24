@@ -10,7 +10,7 @@ import { ViewMultipleChoices } from "../ViewMultipleChoices";
 
 interface IDecisionViewConditionRenderer {
   element: IDecision | ICondition;
-  valueData: string | number | IValue;
+  valueData: string | string[] | number | IValue | undefined;
 }
 
 const DecisionViewConditionRenderer = (
@@ -32,7 +32,7 @@ const DecisionViewConditionRenderer = (
       return (
         <ViewMultipleChoices
           id={name}
-          label={element.label}
+          label={element.description}
           options={options}
         />
       );
@@ -46,8 +46,10 @@ const DecisionViewConditionRenderer = (
       };
       return (
         <ViewRangeField
-          labelFrom={valueRangeInput.labelFrom || `Minimum ${element.label}`}
-          labelTo={valueRangeInput.labelTo || `Maximum ${element.label}`}
+          labelFrom={
+            valueRangeInput.labelFrom || `Minimum ${element.description}`
+          }
+          labelTo={valueRangeInput.labelTo || `Maximum ${element.description}`}
           typeInput={element.typeData}
           valueFrom={valueRangeInput.rangeFrom || 0}
           valueTo={valueRangeInput.rangeTo || 0}
@@ -60,7 +62,7 @@ const DecisionViewConditionRenderer = (
     case ValueHowToSetUp.LIST_OF_VALUES:
       return (
         <DynamicViewField
-          label={element.label}
+          label={element.description}
           type={element.typeData}
           valueInput={valueData as string | number}
         />
