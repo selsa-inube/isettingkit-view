@@ -5,7 +5,6 @@ import {
 } from "@isettingkit/input";
 
 interface ICondition {
-  description: string;
   valueUse: (typeof ValueHowToSetUp)[keyof typeof ValueHowToSetUp];
   name: string;
   value?: string | string[] | number | IValue | undefined;
@@ -13,7 +12,6 @@ interface ICondition {
 }
 
 interface IDecision {
-  description: string;
   endDate?: Date;
   valueUse: (typeof ValueHowToSetUp)[keyof typeof ValueHowToSetUp];
   name: string;
