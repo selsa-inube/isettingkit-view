@@ -1,3 +1,15 @@
+# v0.1.12 (Fri Nov 01 2024)
+
+#### ⚠️ Pushed to `main`
+
+- fix: remove unnecessary code on the viewRangeField ([@cmarin001](https://github.com/cmarin001))
+
+#### Authors: 1
+
+- Cesar Marin Alfonso ([@cmarin001](https://github.com/cmarin001))
+
+---
+
 # v0.1.11 (Fri Nov 01 2024)
 
 #### ⚠️ Pushed to `main`
