@@ -1,3 +1,15 @@
+# v0.1.13 (Fri Nov 01 2024)
+
+#### ⚠️ Pushed to `main`
+
+- fix: adjust types in order to remove a no longer required-property ([@cmarin001](https://github.com/cmarin001))
+
+#### Authors: 1
+
+- Cesar Marin Alfonso ([@cmarin001](https://github.com/cmarin001))
+
+---
+
 # v0.1.12 (Fri Nov 01 2024)
 
 #### ⚠️ Pushed to `main`
