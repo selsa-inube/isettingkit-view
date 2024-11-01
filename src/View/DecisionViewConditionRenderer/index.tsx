@@ -34,16 +34,16 @@ const DecisionViewConditionRenderer = (
       valueRangeInput = valueData as {
         labelFrom?: string;
         labelTo?: string;
-        rangeFrom?: string;
-        rangeTo?: string;
+        from?: string;
+        to?: string;
       };
       return (
         <ViewRangeField
           labelFrom={valueRangeInput.labelFrom || `Minimum ${nameLabel}`}
           labelTo={valueRangeInput.labelTo || `Maximum ${nameLabel}`}
           typeInput={element.dataType}
-          valueFrom={valueRangeInput.rangeFrom || 0}
-          valueTo={valueRangeInput.rangeTo || 0}
+          valueFrom={valueRangeInput.from || 0}
+          valueTo={valueRangeInput.to || 0}
         />
       );
 
