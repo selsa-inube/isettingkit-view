@@ -1,12 +1,8 @@
-import {
-  ICondition,
-  IDecision,
-  IValue,
-  ValueHowToSetUp,
-} from "@isettingkit/input";
+import { IValue, ValueHowToSetUp } from "@isettingkit/input";
 import { DynamicViewField } from "../DynamicViewField";
 import { ViewRangeField } from "../ViewRangeField";
 import { ViewMultipleChoices } from "../ViewMultipleChoices";
+import { ICondition, IDecision } from "./types";
 
 interface IDecisionViewConditionRenderer {
   element: IDecision | ICondition;
@@ -18,6 +14,7 @@ const DecisionViewConditionRenderer = (
 ) => {
   const { element, valueData } = props;
   const name = element.name.replace(" ", "");
+  const nameLabel = element.name.split(/(?=[A-Z])/).join(" ");
 
   let valueRangeInput;
   const selectedList = Array.isArray(valueData) ? valueData : [];
@@ -27,14 +24,10 @@ const DecisionViewConditionRenderer = (
     checked: true,
   }));
 
-  switch (element.howToSetUp) {
+  switch (element.valueUse) {
     case ValueHowToSetUp.LIST_OF_VALUES_MULTI:
       return (
-        <ViewMultipleChoices
-          id={name}
-          label={element.description}
-          options={options}
-        />
+        <ViewMultipleChoices id={name} label={nameLabel} options={options} />
       );
 
     case ValueHowToSetUp.RANGE:
@@ -46,11 +39,9 @@ const DecisionViewConditionRenderer = (
       };
       return (
         <ViewRangeField
-          labelFrom={
-            valueRangeInput.labelFrom || `Minimum ${element.description}`
-          }
-          labelTo={valueRangeInput.labelTo || `Maximum ${element.description}`}
-          typeInput={element.typeData}
+          labelFrom={valueRangeInput.labelFrom || `Minimum ${nameLabel}`}
+          labelTo={valueRangeInput.labelTo || `Maximum ${nameLabel}`}
+          typeInput={element.dataType}
           valueFrom={valueRangeInput.rangeFrom || 0}
           valueTo={valueRangeInput.rangeTo || 0}
         />
@@ -62,8 +53,8 @@ const DecisionViewConditionRenderer = (
     case ValueHowToSetUp.LIST_OF_VALUES:
       return (
         <DynamicViewField
-          label={element.description}
-          type={element.typeData}
+          label={nameLabel}
+          type={element.dataType}
           valueInput={valueData as string | number}
         />
       );
