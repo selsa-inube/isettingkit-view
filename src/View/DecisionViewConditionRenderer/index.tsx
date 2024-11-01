@@ -32,15 +32,13 @@ const DecisionViewConditionRenderer = (
 
     case ValueHowToSetUp.RANGE:
       valueRangeInput = valueData as {
-        labelFrom?: string;
-        labelTo?: string;
         from?: string;
         to?: string;
       };
       return (
         <ViewRangeField
-          labelFrom={valueRangeInput.labelFrom || `Minimum ${nameLabel}`}
-          labelTo={valueRangeInput.labelTo || `Maximum ${nameLabel}`}
+          labelFrom={`Minimum ${nameLabel}`}
+          labelTo={`Maximum ${nameLabel}`}
           typeInput={element.dataType}
           valueFrom={valueRangeInput.from || 0}
           valueTo={valueRangeInput.to || 0}
