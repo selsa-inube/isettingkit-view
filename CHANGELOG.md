@@ -1,3 +1,15 @@
+# v0.1.14 (Tue Nov 05 2024)
+
+#### ⚠️ Pushed to `main`
+
+- fix: adjustments in order to avoid unexpected console warnings ([@cmarin001](https://github.com/cmarin001))
+
+#### Authors: 1
+
+- Cesar Marin Alfonso ([@cmarin001](https://github.com/cmarin001))
+
+---
+
 # v0.1.13 (Fri Nov 01 2024)
 
 #### ⚠️ Pushed to `main`
