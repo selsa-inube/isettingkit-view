@@ -24,10 +24,9 @@ const ViewMultipleChoices = (props: ViewMultipleChoicesProps) => {
       </Text>
       <Stack wrap="wrap" gap="10px">
         {options.map((option) => (
-          <Stack width="fit-content">
+          <Stack key={option.id} width="fit-content">
             <Tag
               id={id + option.id}
-              key={option.id}
               label={option.label}
               appearance="primary"
               weight="normal"
