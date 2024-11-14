@@ -1,3 +1,15 @@
+# v0.1.16 (Thu Nov 14 2024)
+
+#### ⚠️ Pushed to `main`
+
+- fix: update sizes for elements ([@cmarin001](https://github.com/cmarin001))
+
+#### Authors: 1
+
+- Cesar Marin Alfonso ([@cmarin001](https://github.com/cmarin001))
+
+---
+
 # v0.1.15 (Thu Nov 14 2024)
 
 #### ⚠️ Pushed to `main`
