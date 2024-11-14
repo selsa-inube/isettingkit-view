@@ -28,6 +28,16 @@ const props: Partial<ArgTypes<IDynamicViewField>> = {
       },
     },
   },
+  labelType: {
+    options: ["condition", "decision"],
+    description:
+      "The type of label to display, either 'condition' or 'decision'.",
+    table: {
+      type: {
+        summary: "string",
+      },
+    },
+  },
   valueInput: {
     description:
       "The value to be displayed, which is formatted based on the 'type'.",

@@ -29,6 +29,16 @@ const props = {
       },
     },
   },
+  labelType: {
+    options: ["condition", "decision"],
+    description:
+      "The type of label to display, either 'condition' or 'decision'.",
+    table: {
+      type: {
+        summary: "string",
+      },
+    },
+  },
   labelTo: {
     description:
       "The label displayed above the 'to' value, indicating the ending value of the range.",

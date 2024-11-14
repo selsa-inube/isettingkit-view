@@ -50,6 +50,7 @@ Percentage.args = {
   valueTo: 8,
   typeInput: "percentage",
   labelFrom: "Tasa efectiva mínima",
+  labelType: "decision",
 };
 
 export default meta;

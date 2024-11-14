@@ -24,6 +24,7 @@ export const Default: Story = (args: IDynamicViewField) => (
 Default.args = {
   type: "number",
   label: "Antigüedad del cliente (Días)",
+  labelType: "condition",
   valueInput: 720,
 };
 

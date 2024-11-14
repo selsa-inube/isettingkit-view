@@ -4,37 +4,59 @@ import { formatValue } from "@isettingkit/input";
 
 interface IViewRangeField {
   labelFrom?: string;
+  labelType?: string;
   typeInput: ITextfieldInputType;
   valueFrom?: string | number;
   valueTo?: string | number;
 }
 
-declare type ITextfieldInputType = (typeof inputTypes)[number];
-
 declare const inputTypes: readonly [
   "alphabetical",
-  "date",
   "currency",
+  "date",
   "number",
   "percentage",
 ];
 
+declare type ITextfieldInputType = (typeof inputTypes)[number];
+
 const ViewRangeField = (props: IViewRangeField) => {
-  const { labelFrom = "", typeInput, valueFrom = 0, valueTo = 0 } = props;
+  const {
+    labelFrom = "",
+    labelType = "condition",
+    typeInput,
+    valueFrom = 0,
+    valueTo = 0,
+  } = props;
 
   return (
-    <Stack direction="column" gap="4px" alignItems="center">
-      <Text type="label" weight="bold" size="large" appearance="dark">
+    <Stack
+      direction="column"
+      gap="4px"
+      alignItems={labelType === "condition" ? "flex-start" : "center"}
+    >
+      <Text
+        type="label"
+        weight="bold"
+        size={labelType === "condition" ? "medium" : "large"}
+        appearance="dark"
+      >
         {labelFrom}
       </Text>
-      <Text as="span" type="label" size="large" appearance="gray">
+      <Text
+        as="span"
+        type="label"
+        weight={labelType === "condition" ? "normal" : "bold"}
+        size={labelType === "condition" ? "medium" : "large"}
+        appearance="gray"
+      >
         <Stack gap="4px">
           De
           <Text
             as="span"
             type="label"
             weight="bold"
-            size="large"
+            size={labelType === "condition" ? "medium" : "large"}
             appearance="gray"
           >
             {formatValue(valueFrom, typeInput)}
@@ -44,7 +66,7 @@ const ViewRangeField = (props: IViewRangeField) => {
             as="span"
             type="label"
             weight="bold"
-            size="large"
+            size={labelType === "condition" ? "medium" : "large"}
             appearance="gray"
           >
             {formatValue(valueTo, typeInput)}

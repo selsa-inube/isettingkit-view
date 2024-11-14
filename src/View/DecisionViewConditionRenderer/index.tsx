@@ -1,27 +1,28 @@
 import { IValue, ValueHowToSetUp } from "@isettingkit/input";
 import { DynamicViewField } from "../DynamicViewField";
-import { ViewRangeField } from "../ViewRangeField";
 import { ViewMultipleChoices } from "../ViewMultipleChoices";
+import { ViewRangeField } from "../ViewRangeField";
 import { ICondition, IDecision } from "./types";
 
 interface IDecisionViewConditionRenderer {
   element: IDecision | ICondition;
+  type?: "decision" | "condition";
   valueData: string | string[] | number | IValue | undefined;
 }
 
 const DecisionViewConditionRenderer = (
   props: IDecisionViewConditionRenderer,
 ) => {
-  const { element, valueData } = props;
+  const { element, type, valueData } = props;
   const name = element.name.replace(" ", "");
   const nameLabel = element.name.split(/(?=[A-Z])/).join(" ");
 
   let valueRangeInput;
   const selectedList = Array.isArray(valueData) ? valueData : [];
   const options = selectedList.map((item: string, index: number) => ({
+    checked: true,
     id: String(index + 1),
     label: item,
-    checked: true,
   }));
 
   switch (element.valueUse) {
@@ -38,6 +39,7 @@ const DecisionViewConditionRenderer = (
       return (
         <ViewRangeField
           labelFrom={nameLabel}
+          labelType={type}
           typeInput={element.dataType}
           valueFrom={valueRangeInput.from || 0}
           valueTo={valueRangeInput.to || 0}
@@ -51,6 +53,7 @@ const DecisionViewConditionRenderer = (
       return (
         <DynamicViewField
           label={nameLabel}
+          labelType={type}
           type={element.dataType}
           valueInput={valueData as string | number}
         />

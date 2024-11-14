@@ -1,34 +1,50 @@
-import { Text } from "@inubekit/text";
 import { Stack } from "@inubekit/stack";
+import { Text } from "@inubekit/text";
 import { formatValue } from "@isettingkit/input";
 
 interface IDynamicViewField {
-  type: ITextfieldInputType;
   label: string;
+  labelType?: string;
+  type: ITextfieldInputType;
   valueInput: number | string;
 }
 
-declare type ITextfieldInputType = (typeof inputTypes)[number];
-
 declare const inputTypes: readonly [
   "alphabetical",
-  "date",
   "currency",
+  "date",
   "number",
   "percentage",
 ];
 
+declare type ITextfieldInputType = (typeof inputTypes)[number];
+
 const DynamicViewField = (props: IDynamicViewField) => {
-  const { type, label, valueInput } = props;
+  const { label, labelType = "condition", type, valueInput } = props;
 
   return (
-    <Stack direction="column" gap="4px">
-      <Text type="label" weight="bold" size="medium" appearance="dark">
+    <Stack
+      direction="column"
+      gap="4px"
+      alignItems={labelType === "condition" ? "flex-start" : "center"}
+    >
+      <Text
+        type="label"
+        weight="bold"
+        size={labelType === "condition" ? "medium" : "large"}
+        appearance="dark"
+      >
         {label}
       </Text>
-      <Text type="body" size="medium" appearance="gray">
-        {formatValue(valueInput, type)}
-      </Text>
+      {labelType === "condition" ? (
+        <Text type="body" size="medium" appearance="gray">
+          {formatValue(valueInput, type)}
+        </Text>
+      ) : (
+        <Text type="label" size="large" appearance="gray">
+          {formatValue(valueInput, type)}
+        </Text>
+      )}
     </Stack>
   );
 };
