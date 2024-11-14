@@ -26,7 +26,6 @@ Currency.args = {
   valueTo: 400000,
   typeInput: "currency",
   labelFrom: "Desde",
-  labelTo: "Hasta",
 };
 
 export const Number: Story = (args: IViewRangeField) => (
@@ -39,7 +38,6 @@ Number.args = {
   valueTo: 0,
   typeInput: "number",
   labelFrom: "Desde",
-  labelTo: "Hasta",
 };
 
 export const Percentage: Story = (args: IViewRangeField) => (
@@ -52,7 +50,6 @@ Percentage.args = {
   valueTo: 8,
   typeInput: "percentage",
   labelFrom: "Tasa efectiva mínima",
-  labelTo: "Tasa efectiva maxima",
 };
 
 export default meta;
