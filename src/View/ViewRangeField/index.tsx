@@ -29,7 +29,7 @@ const ViewRangeField = (props: IViewRangeField) => {
       </Text>
       <Text as="span" type="label" size="large" appearance="gray">
         <Stack gap="4px">
-          De{" "}
+          De
           <Text
             as="span"
             type="label"
@@ -39,7 +39,7 @@ const ViewRangeField = (props: IViewRangeField) => {
           >
             {formatValue(valueFrom, typeInput)}
           </Text>
-          a{" "}
+          a
           <Text
             as="span"
             type="label"
