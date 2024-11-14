@@ -1,3 +1,16 @@
+# v0.1.15 (Thu Nov 14 2024)
+
+#### ⚠️ Pushed to `main`
+
+- fix: remove unnecessary code ([@cmarin001](https://github.com/cmarin001))
+- fix: update view types ([@cmarin001](https://github.com/cmarin001))
+
+#### Authors: 1
+
+- Cesar Marin Alfonso ([@cmarin001](https://github.com/cmarin001))
+
+---
+
 # v0.1.14 (Tue Nov 05 2024)
 
 #### ⚠️ Pushed to `main`
