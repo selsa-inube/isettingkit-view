@@ -18,8 +18,8 @@ const ViewMultipleChoices = (props: ViewMultipleChoicesProps) => {
   const { id, label, options } = props;
 
   return (
-    <Stack direction="column" gap="2px">
-      <Text type="label" weight="bold" size="small" appearance="gray">
+    <Stack direction="column" gap="4px">
+      <Text type="label" weight="bold" size="medium" appearance="dark">
         {label}
       </Text>
       <Stack wrap="wrap" gap="10px">
@@ -28,7 +28,7 @@ const ViewMultipleChoices = (props: ViewMultipleChoicesProps) => {
             <Tag
               id={id + option.id}
               label={option.label}
-              appearance="primary"
+              appearance="gray"
               weight="normal"
             />
           </Stack>

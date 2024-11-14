@@ -22,11 +22,11 @@ const DynamicViewField = (props: IDynamicViewField) => {
   const { type, label, valueInput } = props;
 
   return (
-    <Stack direction="column" gap="2px">
-      <Text type="label" weight="bold" size="small" appearance="gray">
+    <Stack direction="column" gap="4px">
+      <Text type="label" weight="bold" size="medium" appearance="dark">
         {label}
       </Text>
-      <Text type="body" size="large" appearance="dark">
+      <Text type="body" size="medium" appearance="gray">
         {formatValue(valueInput, type)}
       </Text>
     </Stack>

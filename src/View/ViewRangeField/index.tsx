@@ -1,11 +1,9 @@
-import { Grid } from "@inubekit/grid";
 import { Stack } from "@inubekit/stack";
 import { Text } from "@inubekit/text";
 import { formatValue } from "@isettingkit/input";
 
 interface IViewRangeField {
   labelFrom?: string;
-  labelTo?: string;
   typeInput: ITextfieldInputType;
   valueFrom?: string | number;
   valueTo?: string | number;
@@ -22,34 +20,37 @@ declare const inputTypes: readonly [
 ];
 
 const ViewRangeField = (props: IViewRangeField) => {
-  const {
-    labelFrom = "",
-    labelTo = "",
-    typeInput,
-    valueFrom = 0,
-    valueTo = 0,
-  } = props;
+  const { labelFrom = "", typeInput, valueFrom = 0, valueTo = 0 } = props;
 
   return (
-    <Stack direction="column" gap="2px">
-      <Grid templateColumns="repeat(2, 1fr)" margin="10px 0" gap="12px">
-        <Stack direction="column" gap="2px">
-          <Text type="label" weight="bold" size="small" appearance="gray">
-            {labelFrom}
-          </Text>
-          <Text type="body" size="large" appearance="dark">
+    <Stack direction="column" gap="4px" alignItems="center">
+      <Text type="label" weight="bold" size="large" appearance="dark">
+        {labelFrom}
+      </Text>
+      <Text as="span" type="label" size="large" appearance="gray">
+        <Stack gap="4px">
+          De{" "}
+          <Text
+            as="span"
+            type="label"
+            weight="bold"
+            size="large"
+            appearance="gray"
+          >
             {formatValue(valueFrom, typeInput)}
           </Text>
-        </Stack>
-        <Stack direction="column" gap="2px">
-          <Text type="label" weight="bold" size="small" appearance="gray">
-            {labelTo}
-          </Text>
-          <Text type="body" size="large" appearance="dark">
+          a{" "}
+          <Text
+            as="span"
+            type="label"
+            weight="bold"
+            size="large"
+            appearance="gray"
+          >
             {formatValue(valueTo, typeInput)}
           </Text>
         </Stack>
-      </Grid>
+      </Text>
     </Stack>
   );
 };

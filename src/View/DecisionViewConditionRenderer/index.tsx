@@ -37,8 +37,7 @@ const DecisionViewConditionRenderer = (
       };
       return (
         <ViewRangeField
-          labelFrom={`Minimum ${nameLabel}`}
-          labelTo={`Maximum ${nameLabel}`}
+          labelFrom={nameLabel}
           typeInput={element.dataType}
           valueFrom={valueRangeInput.from || 0}
           valueTo={valueRangeInput.to || 0}
