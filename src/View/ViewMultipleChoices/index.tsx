@@ -29,7 +29,7 @@ const ViewMultipleChoices = (props: ViewMultipleChoicesProps) => {
               id={id + option.id}
               label={option.label}
               appearance="gray"
-              weight="normal"
+              weight="strong"
             />
           </Stack>
         ))}
