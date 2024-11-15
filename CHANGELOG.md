@@ -1,3 +1,15 @@
+# v0.1.17 (Fri Nov 15 2024)
+
+#### ⚠️ Pushed to `main`
+
+- fix: update gaps between labels and descriptions ([@cmarin001](https://github.com/cmarin001))
+
+#### Authors: 1
+
+- Cesar Marin Alfonso ([@cmarin001](https://github.com/cmarin001))
+
+---
+
 # v0.1.16 (Thu Nov 14 2024)
 
 #### ⚠️ Pushed to `main`
