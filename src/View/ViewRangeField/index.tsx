@@ -32,7 +32,7 @@ const ViewRangeField = (props: IViewRangeField) => {
   return (
     <Stack
       direction="column"
-      gap="4px"
+      gap="2px"
       alignItems={labelType === "condition" ? "flex-start" : "center"}
     >
       <Text
