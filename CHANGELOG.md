@@ -1,3 +1,15 @@
+# v0.1.18 (Fri Nov 15 2024)
+
+#### ⚠️ Pushed to `main`
+
+- fix: adjust tags in order to use the right weight ([@cmarin001](https://github.com/cmarin001))
+
+#### Authors: 1
+
+- Cesar Marin Alfonso ([@cmarin001](https://github.com/cmarin001))
+
+---
+
 # v0.1.17 (Fri Nov 15 2024)
 
 #### ⚠️ Pushed to `main`
