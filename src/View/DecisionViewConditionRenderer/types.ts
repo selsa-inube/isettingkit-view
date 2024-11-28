@@ -42,4 +42,16 @@ interface IValue {
   statusTo?: IInputStatus;
 }
 
-export type { ICondition, IDecision, IRuleDecision, IValue };
+interface IDecisionViewConditionRenderer {
+  element: IDecision | ICondition;
+  type?: "decision" | "condition";
+  valueData: string | string[] | number | IValue | undefined;
+}
+
+export type {
+  ICondition,
+  IDecisionViewConditionRenderer,
+  IDecision,
+  IRuleDecision,
+  IValue,
+};

@@ -1,67 +1,35 @@
-import { IValue, ValueHowToSetUp } from "@isettingkit/input";
-import { DynamicViewField } from "../DynamicViewField";
-import { ViewMultipleChoices } from "../ViewMultipleChoices";
-import { ViewRangeField } from "../ViewRangeField";
-import { ICondition, IDecision } from "./types";
+import React from "react";
+import { IDecisionViewConditionRenderer } from "./types";
+import { getStrategy, StrategyType } from "./utils";
 
-interface IDecisionViewConditionRenderer {
-  element: IDecision | ICondition;
-  type?: "decision" | "condition";
-  valueData: string | string[] | number | IValue | undefined;
-}
+function DecisionViewConditionRenderer(props: IDecisionViewConditionRenderer) {
+  const { element, valueData, type } = props;
 
-const DecisionViewConditionRenderer = (
-  props: IDecisionViewConditionRenderer,
-) => {
-  const { element, type, valueData } = props;
   const name = element.name.replace(" ", "");
   const nameLabel = element.name.split(/(?=[A-Z])/).join(" ");
+  const strategy = getStrategy(element.valueUse as StrategyType);
 
-  let valueRangeInput;
-  const selectedList = Array.isArray(valueData) ? valueData : [];
-  const options = selectedList.map((item: string, index: number) => ({
-    checked: true,
-    id: String(index + 1),
-    label: item,
-  }));
-
-  switch (element.valueUse) {
-    case ValueHowToSetUp.LIST_OF_VALUES_MULTI:
-      return (
-        <ViewMultipleChoices id={name} label={nameLabel} options={options} />
-      );
-
-    case ValueHowToSetUp.RANGE:
-      valueRangeInput = valueData as {
-        from?: string;
-        to?: string;
-      };
-      return (
-        <ViewRangeField
-          labelFrom={nameLabel}
-          labelType={type}
-          typeInput={element.dataType}
-          valueFrom={valueRangeInput.from || 0}
-          valueTo={valueRangeInput.to || 0}
-        />
-      );
-
-    case ValueHowToSetUp.GREATER_THAN:
-    case ValueHowToSetUp.LESS_THAN:
-    case ValueHowToSetUp.EQUAL:
-    case ValueHowToSetUp.LIST_OF_VALUES:
-      return (
-        <DynamicViewField
-          label={nameLabel}
-          labelType={type}
-          type={element.dataType}
-          valueInput={valueData as string | number}
-        />
-      );
-    default:
-      return null;
+  if (!strategy) {
+    console.error(`No strategy found for valueUse: ${element.valueUse}`);
+    return null;
   }
-};
+
+  try {
+    return React.createElement(strategy, {
+      name,
+      nameLabel,
+      valueData,
+      type,
+      element,
+    });
+  } catch (error) {
+    console.error(
+      `Error rendering strategy for valueUse: ${element.valueUse}`,
+      error,
+    );
+    return null;
+  }
+}
 
 export { DecisionViewConditionRenderer };
 export type { IDecisionViewConditionRenderer };
