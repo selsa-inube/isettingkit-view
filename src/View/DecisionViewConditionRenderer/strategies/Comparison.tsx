@@ -25,3 +25,4 @@ const ComparisonStrategy = ({
 };
 
 export { ComparisonStrategy };
+export type { IComparisonStrategy };

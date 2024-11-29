@@ -29,3 +29,4 @@ const RangeStrategy = ({
 };
 
 export { RangeStrategy };
+export type { IRangeStrategy };

@@ -1,9 +1,8 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { ComparisonStrategy } from "../strategies/Comparison";
 import { ListOfValuesMultiStrategy } from "../strategies/ListOfValuesMulti";
 import { RangeStrategy } from "../strategies/Range";
 
-const strategies: any = {
+const strategies = {
   LIST_OF_VALUES_MULTI: ListOfValuesMultiStrategy,
   RANGE: RangeStrategy,
   GREATER_THAN: ComparisonStrategy,
@@ -13,14 +12,7 @@ const strategies: any = {
 };
 
 type StrategyType = keyof typeof strategies;
-
-const getStrategy = (type: StrategyType) => {
-  if (!strategies[type]) {
-    console.error(`Strategy for type "${type as string}" not found.`);
-    return null;
-  }
-  return strategies[type];
-};
+const getStrategy = (type: StrategyType) => strategies[type];
 
 export { getStrategy };
 export type { StrategyType };

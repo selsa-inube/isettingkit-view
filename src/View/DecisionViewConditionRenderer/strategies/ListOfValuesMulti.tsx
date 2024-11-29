@@ -23,3 +23,4 @@ const ListOfValuesMultiStrategy = ({
 };
 
 export { ListOfValuesMultiStrategy };
+export type { IListOfValuesMultiStrategy };
