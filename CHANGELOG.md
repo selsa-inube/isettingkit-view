@@ -1,3 +1,15 @@
+# v0.1.22 (Thu Dec 19 2024)
+
+#### ⚠️ Pushed to `main`
+
+- fix: adjustment for interfaces calling ([@cmarin001](https://github.com/cmarin001))
+
+#### Authors: 1
+
+- Cesar Marin Alfonso ([@cmarin001](https://github.com/cmarin001))
+
+---
+
 # v0.1.21 (Thu Dec 19 2024)
 
 #### ⚠️ Pushed to `main`
