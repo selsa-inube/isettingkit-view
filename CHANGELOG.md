@@ -1,3 +1,16 @@
+# v0.1.21 (Thu Dec 19 2024)
+
+#### ⚠️ Pushed to `main`
+
+- Merge branch 'main' of https://github.com/selsa-inube/isettingkit-view ([@cmarin001](https://github.com/cmarin001))
+- chore: update input dependencies ([@cmarin001](https://github.com/cmarin001))
+
+#### Authors: 1
+
+- Cesar Marin Alfonso ([@cmarin001](https://github.com/cmarin001))
+
+---
+
 # v0.1.20 (Fri Nov 29 2024)
 
 #### ⚠️ Pushed to `main`
