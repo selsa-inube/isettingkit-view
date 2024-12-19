@@ -44,7 +44,7 @@ const Range: Story = {
     element: {
       ...element,
       valueUse: ValueHowToSetUp.RANGE,
-      dataType: "number",
+      dataType: ValueDataType.PERCENTAGE,
     },
     type: "decision",
     valueData: { from: 1, to: 10 },
@@ -56,10 +56,10 @@ const GreaterThan: Story = {
     element: {
       ...element,
       valueUse: ValueHowToSetUp.GREATER_THAN,
-      dataType: "number",
+      dataType: ValueDataType.PERCENTAGE,
     },
     type: "decision",
-    valueData: "0",
+    valueData: 12,
   },
 };
 
@@ -68,7 +68,7 @@ const Equal: Story = {
     element: {
       ...element,
       valueUse: ValueHowToSetUp.EQUAL,
-      dataType: "alphabetical",
+      dataType: ValueDataType.ALPHABETICAL,
     },
     valueData: "Option1",
     type: "decision",
@@ -80,7 +80,7 @@ const LessThan: Story = {
     element: {
       ...element,
       valueUse: ValueHowToSetUp.LESS_THAN,
-      dataType: "number",
+      dataType: ValueDataType.NUMBER,
     },
     type: "decision",
     valueData: "0",
