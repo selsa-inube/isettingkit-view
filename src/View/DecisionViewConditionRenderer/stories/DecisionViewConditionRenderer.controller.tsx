@@ -1,8 +1,8 @@
-import { ICondition } from "../types";
+import { IRuleDecision } from "@isettingkit/input";
 import { DecisionViewConditionRenderer } from "..";
 
 interface IDecisionConditionRendererController {
-  element: ICondition;
+  element: IRuleDecision;
   valueData: string | number | { from?: number; to?: number };
   type?: "decision" | "condition";
 }

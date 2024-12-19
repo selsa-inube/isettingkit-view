@@ -1,11 +1,11 @@
+import { IRuleDecision } from "@isettingkit/input";
 import { DynamicViewField } from "../../DynamicViewField";
-import { IDecision, ICondition } from "../types";
 
 interface IComparisonStrategy {
   nameLabel: string;
   type?: "decision" | "condition";
   valueData: string | number | undefined;
-  element: IDecision | ICondition;
+  element: IRuleDecision;
 }
 
 const ComparisonStrategy = ({
@@ -18,7 +18,7 @@ const ComparisonStrategy = ({
     <DynamicViewField
       label={nameLabel}
       labelType={type}
-      type={element.dataType}
+      type={element.decisionDataType! || element.conditionDataType}
       valueInput={valueData as string | number}
     />
   );

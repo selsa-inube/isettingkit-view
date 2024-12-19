@@ -10,18 +10,19 @@ const meta: Meta<typeof DecisionViewConditionRenderer> = {
 type Story = StoryObj<typeof DecisionViewConditionRenderer>;
 
 const element = {
-  name: "exampleCondition",
+  conditionName: "exampleCondition",
+  labelName: "Example Condition",
   value: ["Option1"],
-  possibleValue: { list: ["Option1", "Option2", "Option3"] },
-  valueUse: ValueHowToSetUp.LIST_OF_VALUES,
-  dataType: ValueDataType.ALPHABETICAL,
+  listOfPossibleValues: { list: ["Option1", "Option2", "Option3"] },
+  howToSetTheCondition: ValueHowToSetUp.LIST_OF_VALUES,
+  conditionconditionDataType: ValueDataType.ALPHABETICAL,
 };
 
 const ListOfValues: Story = {
   args: {
     element: {
       ...element,
-      valueUse: ValueHowToSetUp.LIST_OF_VALUES,
+      howToSetTheCondition: ValueHowToSetUp.LIST_OF_VALUES,
     },
     valueData: "Option1",
     type: "condition",
@@ -32,7 +33,7 @@ const MultipleChoices: Story = {
   args: {
     element: {
       ...element,
-      valueUse: ValueHowToSetUp.LIST_OF_VALUES_MULTI,
+      howToSetTheCondition: ValueHowToSetUp.LIST_OF_VALUES_MULTI,
     },
     valueData: ["indepenent", "property"],
     type: "condition",
@@ -43,8 +44,8 @@ const Range: Story = {
   args: {
     element: {
       ...element,
-      valueUse: ValueHowToSetUp.RANGE,
-      dataType: ValueDataType.PERCENTAGE,
+      howToSetTheCondition: ValueHowToSetUp.RANGE,
+      conditionDataType: ValueDataType.PERCENTAGE,
     },
     type: "decision",
     valueData: { from: 1, to: 10 },
@@ -55,8 +56,8 @@ const GreaterThan: Story = {
   args: {
     element: {
       ...element,
-      valueUse: ValueHowToSetUp.GREATER_THAN,
-      dataType: ValueDataType.PERCENTAGE,
+      howToSetTheCondition: ValueHowToSetUp.GREATER_THAN,
+      conditionDataType: ValueDataType.PERCENTAGE,
     },
     type: "decision",
     valueData: 12,
@@ -67,8 +68,8 @@ const Equal: Story = {
   args: {
     element: {
       ...element,
-      valueUse: ValueHowToSetUp.EQUAL,
-      dataType: ValueDataType.ALPHABETICAL,
+      howToSetTheCondition: ValueHowToSetUp.EQUAL,
+      conditionDataType: ValueDataType.ALPHABETICAL,
     },
     valueData: "Option1",
     type: "decision",
@@ -79,8 +80,8 @@ const LessThan: Story = {
   args: {
     element: {
       ...element,
-      valueUse: ValueHowToSetUp.LESS_THAN,
-      dataType: ValueDataType.NUMBER,
+      howToSetTheCondition: ValueHowToSetUp.LESS_THAN,
+      conditionDataType: ValueDataType.NUMBER,
     },
     type: "decision",
     valueData: "0",

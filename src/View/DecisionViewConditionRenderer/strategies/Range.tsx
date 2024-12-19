@@ -1,11 +1,11 @@
+import { IRuleDecision } from "@isettingkit/input";
 import { ViewRangeField } from "../../ViewRangeField";
-import { ICondition, IDecision } from "../types";
 
 interface IRangeStrategy {
   nameLabel: string;
   type?: "decision" | "condition";
   valueData: { from?: string; to?: string } | undefined;
-  element: IDecision | ICondition;
+  element: IRuleDecision;
 }
 
 const RangeStrategy = ({
@@ -21,7 +21,7 @@ const RangeStrategy = ({
     <ViewRangeField
       labelFrom={nameLabel}
       labelType={type}
-      typeInput={element.dataType}
+      typeInput={element.decisionDataType! || element.conditionDataType}
       valueFrom={valueFrom}
       valueTo={valueTo}
     />

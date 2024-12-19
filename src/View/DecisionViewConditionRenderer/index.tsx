@@ -1,18 +1,16 @@
-import React from "react";
 import { IDecisionViewConditionRenderer } from "./types";
 import { getStrategy, StrategyType } from "./utils";
 import { normalizeValueUse } from "./utils/normalizeValueUse";
 
 function DecisionViewConditionRenderer(props: IDecisionViewConditionRenderer) {
   const { element, valueData, type } = props;
-
-  const name = element.name.replace(" ", "");
-  const nameLabel = element.name.split(/(?=[A-Z])/).join(" ");
-  const normalizedValueUse = normalizeValueUse(element.valueUse);
+  const normalizedValueUse = normalizeValueUse(
+    element.howToSetTheDecision! || element.howToSetTheCondition,
+  );
 
   if (!normalizedValueUse) {
     console.error(
-      `Invalid valueUse: ${element.valueUse}. Please ensure it matches the supported types.`,
+      `Invalid valueUse: ${element.howToSetTheDecision || element.howToSetTheCondition}. Please ensure it matches the supported types.`,
     );
     return null;
   }
@@ -20,7 +18,9 @@ function DecisionViewConditionRenderer(props: IDecisionViewConditionRenderer) {
   const strategy = getStrategy(normalizedValueUse as StrategyType);
 
   if (!strategy) {
-    console.error(`No strategy found for valueUse: ${element.valueUse}`);
+    console.error(
+      `No strategy found for valueUse: ${element.howToSetTheDecision}`,
+    );
     return null;
   }
 
@@ -35,8 +35,8 @@ function DecisionViewConditionRenderer(props: IDecisionViewConditionRenderer) {
 
     return (
       <StrategyComponent
-        name={name}
-        nameLabel={nameLabel}
+        name={element.ruleName || element.conditionName!}
+        nameLabel={element.labelName!}
         valueData={valueData}
         type={type}
         element={element}
@@ -44,7 +44,7 @@ function DecisionViewConditionRenderer(props: IDecisionViewConditionRenderer) {
     );
   } catch (error) {
     console.error(
-      `Error rendering strategy for valueUse: ${element.valueUse}`,
+      `Error rendering strategy for howToSetTheDecision: ${element.howToSetTheDecision}`,
       error,
     );
     return null;

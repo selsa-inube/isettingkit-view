@@ -1,4 +1,4 @@
-import { ICondition, IDecision, IInputStatus } from "@isettingkit/input";
+import { IInputStatus, IRuleDecision } from "@isettingkit/input";
 
 interface IValue {
   list?: string[];
@@ -15,9 +15,9 @@ interface IValue {
 }
 
 interface IDecisionViewConditionRenderer {
-  element: IDecision | ICondition;
+  element: IRuleDecision;
   type?: "decision" | "condition";
   valueData: string | string[] | number | IValue | undefined;
 }
 
-export type { ICondition, IDecisionViewConditionRenderer, IDecision, IValue };
+export type { IDecisionViewConditionRenderer, IValue };
