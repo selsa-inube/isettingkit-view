@@ -1,6 +1,6 @@
-import { Tag } from "@inubekit/tag";
-import { Stack } from "@inubekit/stack";
-import { Text } from "@inubekit/text";
+import { Tag } from "@inubekit/inubekit";
+import { Stack } from "@inubekit/inubekit";
+import { Text } from "@inubekit/inubekit";
 
 interface IOptionItemChecked {
   id: string;
