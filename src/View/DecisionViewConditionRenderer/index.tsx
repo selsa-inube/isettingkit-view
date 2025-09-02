@@ -2,7 +2,9 @@ import { IDecisionViewConditionRenderer } from "./types";
 import { getStrategy, StrategyType } from "./utils";
 import { normalizeValueUse } from "./utils/normalizeValueUse";
 
-function DecisionViewConditionRenderer(props: IDecisionViewConditionRenderer) {
+const DecisionViewConditionRenderer = (
+  props: IDecisionViewConditionRenderer,
+) => {
   const { element, valueData, type } = props;
   const normalizedValueUse = normalizeValueUse(
     element.howToSetTheDecision! || element.howToSetTheCondition,
@@ -49,7 +51,7 @@ function DecisionViewConditionRenderer(props: IDecisionViewConditionRenderer) {
     );
     return null;
   }
-}
+};
 
 export { DecisionViewConditionRenderer };
 export type { IDecisionViewConditionRenderer };

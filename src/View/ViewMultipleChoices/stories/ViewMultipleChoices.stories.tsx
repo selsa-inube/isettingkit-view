@@ -28,6 +28,7 @@ export const Default: Story = (args: ViewMultipleChoicesProps) => (
 );
 Default.args = {
   id: "MultipleOptionesCategorias",
+  label: "Categorias",
   options: options,
 };
 

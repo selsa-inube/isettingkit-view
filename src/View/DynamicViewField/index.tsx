@@ -23,28 +23,22 @@ const DynamicViewField = (props: IDynamicViewField) => {
   const { label, labelType = "condition", type, valueInput } = props;
 
   return (
-    <Stack
-      direction="column"
-      gap="2px"
-      alignItems={labelType === "condition" ? "flex-start" : "center"}
-    >
+    <Stack justifyContent="space-between" alignItems="center" width="100%">
       <Text
         type="label"
         weight="bold"
-        size={labelType === "condition" ? "medium" : "large"}
-        appearance="dark"
+        size="medium"
+        appearance={labelType === "condition" ? "gray" : "dark"}
       >
         {label}
       </Text>
-      {labelType === "condition" ? (
-        <Text type="body" size="medium" appearance="gray">
-          {formatValue(valueInput, type)}
-        </Text>
-      ) : (
-        <Text type="label" size="large" appearance="gray">
-          {formatValue(valueInput, type)}
-        </Text>
-      )}
+      <Text
+        type={labelType === "condition" ? "body" : "title"}
+        size={labelType === "condition" ? "small" : "medium"}
+        appearance={labelType === "condition" ? "dark" : "gray"}
+      >
+        {formatValue(valueInput, type)}
+      </Text>
     </Stack>
   );
 };

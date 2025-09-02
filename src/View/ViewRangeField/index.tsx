@@ -29,49 +29,31 @@ const ViewRangeField = (props: IViewRangeField) => {
     valueTo = 0,
   } = props;
 
+  const label = `De ${formatValue(valueFrom, typeInput)} a ${formatValue(valueTo, typeInput)}`;
   return (
     <Stack
-      direction="column"
-      gap="2px"
-      alignItems={labelType === "condition" ? "flex-start" : "center"}
+      gap="8px"
+      alignItems="center"
+      justifyContent={
+        labelType === "condition" ? "space-between" : "flex-start"
+      }
     >
       <Text
         type="label"
         weight="bold"
-        size={labelType === "condition" ? "medium" : "large"}
-        appearance="dark"
+        size="medium"
+        appearance={labelType === "condition" ? "gray" : "dark"}
       >
         {labelFrom}
       </Text>
       <Text
         as="span"
-        type="label"
-        weight={labelType === "condition" ? "normal" : "bold"}
-        size={labelType === "condition" ? "medium" : "large"}
-        appearance="gray"
+        type={labelType === "condition" ? "body" : "title"}
+        weight="normal"
+        size={labelType === "condition" ? "small" : "medium"}
+        appearance={labelType === "condition" ? "dark" : "gray"}
       >
-        <Stack gap="4px">
-          De
-          <Text
-            as="span"
-            type="label"
-            weight="bold"
-            size={labelType === "condition" ? "medium" : "large"}
-            appearance="gray"
-          >
-            {formatValue(valueFrom, typeInput)}
-          </Text>
-          a
-          <Text
-            as="span"
-            type="label"
-            weight="bold"
-            size={labelType === "condition" ? "medium" : "large"}
-            appearance="gray"
-          >
-            {formatValue(valueTo, typeInput)}
-          </Text>
-        </Stack>
+        {label}
       </Text>
     </Stack>
   );
