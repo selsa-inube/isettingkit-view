@@ -8,18 +8,18 @@ interface IOptionItemChecked {
   checked?: boolean;
 }
 
-interface IViewMultipleChoices {
+interface IViewMultipleChoicesNew {
   id: string;
   label: string;
   options: IOptionItemChecked[];
 }
 
-const ViewMultipleChoices = (props: IViewMultipleChoices) => {
+const ViewMultipleChoicesNew = (props: IViewMultipleChoicesNew) => {
   const { id, label, options } = props;
 
   return (
-    <Stack direction="column" gap="2px">
-      <Text type="label" weight="bold" size="medium" appearance="dark">
+    <Stack justifyContent="space-between" alignItems="center" width="100%">
+      <Text type="label" weight="bold" size="medium" appearance="gray">
         {label}
       </Text>
       <Stack wrap="wrap" gap="8px">
@@ -38,5 +38,5 @@ const ViewMultipleChoices = (props: IViewMultipleChoices) => {
   );
 };
 
-export { ViewMultipleChoices };
-export type { IViewMultipleChoices };
+export { ViewMultipleChoicesNew };
+export type { IViewMultipleChoicesNew };

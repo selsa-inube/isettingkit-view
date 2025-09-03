@@ -1,5 +1,5 @@
 import { ArgTypes } from "@storybook/react";
-import { IViewMultipleChoices } from "..";
+import { IViewMultipleChoicesNew } from "..";
 
 const parameters = {
   docs: {
@@ -13,7 +13,7 @@ const parameters = {
   },
 };
 
-const props: Partial<ArgTypes<IViewMultipleChoices>> = {
+const props: Partial<ArgTypes<IViewMultipleChoicesNew>> = {
   id: {
     description:
       "A unique identifier for the **ViewMultipleChoices** component, used to differentiate between multiple instances of the component.",

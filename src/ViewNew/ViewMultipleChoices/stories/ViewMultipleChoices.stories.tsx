@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from "@storybook/react";
 
 import { parameters, props } from "./props";
-import { ViewMultipleChoices, IViewMultipleChoices } from "..";
+import { ViewMultipleChoicesNew, IViewMultipleChoicesNew } from "..";
 
 const options = [
   { id: "1", label: "Ocasionales", checked: true },
@@ -14,22 +14,22 @@ const options = [
   { id: "8", label: "Inactivos", checked: true },
 ];
 
-const meta: Meta<typeof ViewMultipleChoices> = {
-  title: "components/view/ViewMultipleChoices",
-  component: ViewMultipleChoices,
+const meta: Meta<typeof ViewMultipleChoicesNew> = {
+  title: "components/view/ViewMultipleChoicesNew",
+  component: ViewMultipleChoicesNew,
   parameters,
   argTypes: props,
 };
 
-type Story = StoryObj<typeof ViewMultipleChoices>;
+type Story = StoryObj<typeof ViewMultipleChoicesNew>;
 
-export const Default: Story = (args: IViewMultipleChoices) => (
-  <ViewMultipleChoices {...args} />
+const Default: Story = (args: IViewMultipleChoicesNew) => (
+  <ViewMultipleChoicesNew {...args} />
 );
 Default.args = {
   id: "MultipleOptionesCategorias",
   label: "Categorias",
   options: options,
 };
-
+export { Default };
 export default meta;

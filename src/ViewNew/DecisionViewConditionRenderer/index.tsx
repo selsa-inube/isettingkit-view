@@ -1,12 +1,12 @@
-import { IDecisionViewConditionRenderer } from "./types";
-import { getStrategy, StrategyType } from "./utils";
-import { normalizeValueUse } from "./utils/normalizeValueUse";
+import { IDecisionViewConditionRendererNew } from "./types";
+import { getStrategyNew, StrategyType } from "./utils";
+import { normalizeValueUseNew } from "./utils/normalizeValueUse";
 
-const DecisionViewConditionRenderer = (
-  props: IDecisionViewConditionRenderer,
+const DecisionViewConditionRendererNew = (
+  props: IDecisionViewConditionRendererNew,
 ) => {
   const { element, valueData, type } = props;
-  const normalizedValueUse = normalizeValueUse(
+  const normalizedValueUse = normalizeValueUseNew(
     element.howToSetTheDecision! || element.howToSetTheCondition,
   );
 
@@ -17,7 +17,7 @@ const DecisionViewConditionRenderer = (
     return null;
   }
 
-  const strategy = getStrategy(normalizedValueUse as StrategyType);
+  const strategy = getStrategyNew(normalizedValueUse as StrategyType);
 
   if (!strategy) {
     console.error(
@@ -53,4 +53,5 @@ const DecisionViewConditionRenderer = (
   }
 };
 
-export { DecisionViewConditionRenderer };
+export { DecisionViewConditionRendererNew };
+export type { IDecisionViewConditionRendererNew };
