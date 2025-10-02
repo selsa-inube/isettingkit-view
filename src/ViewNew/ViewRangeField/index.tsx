@@ -15,6 +15,7 @@ declare const inputTypes: readonly [
   "currency",
   "date",
   "number",
+  "monetary",
   "percentage",
 ];
 

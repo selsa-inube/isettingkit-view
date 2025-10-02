@@ -12,6 +12,7 @@ interface IDynamicViewFieldNew {
 declare const inputTypes: readonly [
   "alphabetical",
   "currency",
+  "monetary",
   "date",
   "number",
   "percentage",
