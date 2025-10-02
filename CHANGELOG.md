@@ -1,3 +1,15 @@
+# v0.1.26 (Thu Oct 02 2025)
+
+#### ⚠️ Pushed to `main`
+
+- fix: added support for monetary type ([@cmarin001](https://github.com/cmarin001))
+
+#### Authors: 1
+
+- Cesar Marin Alfonso ([@cmarin001](https://github.com/cmarin001))
+
+---
+
 # v0.1.25 (Wed Sep 03 2025)
 
 #### ⚠️ Pushed to `main`
