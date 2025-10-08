@@ -37,7 +37,7 @@
   },
   "dependencies": {
     "@inubekit/inubekit": "^6.0.0",
-    "@isettingkit/input": "^1.0.8"
+    "@isettingkit/input": "^1.0.9"
   },
   "peerDependencies": {
     "react": "19.1.1",
