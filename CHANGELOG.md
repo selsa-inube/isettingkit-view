@@ -1,3 +1,15 @@
+# v0.1.28 (Fri Oct 24 2025)
+
+#### ⚠️ Pushed to `main`
+
+- chore: update types dependency ([@cmarin001](https://github.com/cmarin001))
+
+#### Authors: 1
+
+- Cesar Marin Alfonso ([@cmarin001](https://github.com/cmarin001))
+
+---
+
 # v0.1.27 (Wed Oct 08 2025)
 
 #### ⚠️ Pushed to `main`
