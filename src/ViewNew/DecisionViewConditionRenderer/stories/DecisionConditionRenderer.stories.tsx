@@ -13,9 +13,9 @@ const element = {
   conditionName: "exampleCondition",
   labelName: "Example Condition",
   value: ["Option1"],
-  listOfPossibleValues: { list: ["Option1", "Option2", "Option3"] },
+  listOfPossibleValues: { list: ["Option1", "200", "Option3"] },
   howToSetTheCondition: ValueHowToSetUp.LIST_OF_VALUES,
-  conditionconditionDataType: ValueDataType.ALPHABETICAL,
+  conditionDataType: ValueDataType.PERCENTAGE,
 };
 
 const ListOfValues: Story = {
@@ -35,7 +35,7 @@ const MultipleChoices: Story = {
       ...element,
       howToSetTheCondition: ValueHowToSetUp.LIST_OF_VALUES_MULTI,
     },
-    valueData: ["indepenent", "property"],
+    valueData: ["indepenent", "property", "freedom1", "123000"],
     type: "condition",
   },
 };
@@ -45,7 +45,7 @@ const Range: Story = {
     element: {
       ...element,
       howToSetTheCondition: ValueHowToSetUp.RANGE,
-      conditionDataType: ValueDataType.PERCENTAGE,
+      conditionDataType: ValueDataType.MONETARY,
     },
     type: "decision",
     valueData: { from: 14.2, to: 21.5 },
