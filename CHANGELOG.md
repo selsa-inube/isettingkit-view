@@ -1,3 +1,20 @@
+# v0.1.30 (Mon Oct 27 2025)
+
+#### 🐛 Bug Fix
+
+- feat: fromat values $ or % for list data [#1](https://github.com/selsa-inube/isettingkit-view/pull/1) ([@heber59](https://github.com/heber59))
+
+#### ⚠️ Pushed to `main`
+
+- chore: update dependencies ([@cmarin001](https://github.com/cmarin001))
+
+#### Authors: 2
+
+- Cesar Marin Alfonso ([@cmarin001](https://github.com/cmarin001))
+- Heber  Alvarez  ([@heber59](https://github.com/heber59))
+
+---
+
 # v0.1.29 (Mon Oct 27 2025)
 
 #### ⚠️ Pushed to `main`
