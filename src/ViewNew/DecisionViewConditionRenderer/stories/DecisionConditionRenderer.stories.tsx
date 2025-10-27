@@ -48,7 +48,7 @@ const Range: Story = {
       conditionDataType: ValueDataType.PERCENTAGE,
     },
     type: "decision",
-    valueData: { from: 1, to: 10 },
+    valueData: { from: 14.2, to: 21.5 },
   },
 };
 
