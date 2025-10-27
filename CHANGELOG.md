@@ -1,3 +1,15 @@
+# v0.1.29 (Mon Oct 27 2025)
+
+#### ⚠️ Pushed to `main`
+
+- chore: update input depenendy in order to fommat range properly ([@cmarin001](https://github.com/cmarin001))
+
+#### Authors: 1
+
+- Cesar Marin Alfonso ([@cmarin001](https://github.com/cmarin001))
+
+---
+
 # v0.1.28 (Fri Oct 24 2025)
 
 #### ⚠️ Pushed to `main`
