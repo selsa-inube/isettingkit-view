@@ -1,6 +1,8 @@
-import { Stack } from "@inubekit/inubekit";
+import { Icon, Stack } from "@inubekit/inubekit";
 import { Text } from "@inubekit/inubekit";
 import { formatValue } from "@isettingkit/input";
+import { MdOutlineLockClock } from "react-icons/md";
+import { FilterModal } from "../../ModalFilter";
 
 interface IViewRangeFieldNew {
   labelFrom?: string;
@@ -8,6 +10,10 @@ interface IViewRangeFieldNew {
   typeInput: ITextfieldInputType;
   valueFrom?: string | number;
   valueTo?: string | number;
+  stillValid: boolean;
+  showModal: boolean;
+  handleOnClick: () => void;
+  validDate: string;
 }
 
 declare const inputTypes: readonly [
@@ -28,6 +34,10 @@ const ViewRangeFieldNew = (props: IViewRangeFieldNew) => {
     typeInput,
     valueFrom = 0,
     valueTo = 0,
+    stillValid,
+    handleOnClick,
+    showModal,
+    validDate,
   } = props;
 
   const label = `De ${formatValue(valueFrom, typeInput)} a ${formatValue(valueTo, typeInput)}`;
@@ -56,6 +66,39 @@ const ViewRangeFieldNew = (props: IViewRangeFieldNew) => {
       >
         {label}
       </Text>
+      {stillValid && (
+        <Icon
+          appearance={"help"}
+          icon={<MdOutlineLockClock onClick={handleOnClick} />}
+        />
+      )}
+      {showModal && (
+        <FilterModal
+          actionButtonLabel="Aceptar"
+          onClick={handleOnClick}
+          onCloseModal={handleOnClick}
+          portalId="portal"
+          title="Vigencia cerrada"
+          buttonAppearance="help"
+          withIconTitle
+          icon={<MdOutlineLockClock />}
+        >
+          <Stack direction="row" gap="4px" wrap="wrap">
+            <Text type="title" size="medium" weight="normal" appearance="gray">
+              {labelFrom}
+            </Text>
+            <Text type="title" size="medium" appearance="dark" weight="bold">
+              {label}
+            </Text>
+            <Text type="title" size="medium" weight="normal" appearance="gray">
+              {"estará vigente hasta"}
+            </Text>
+            <Text type="title" size="medium" appearance="dark" weight="bold">
+              {validDate}
+            </Text>
+          </Stack>
+        </FilterModal>
+      )}
     </Stack>
   );
 };

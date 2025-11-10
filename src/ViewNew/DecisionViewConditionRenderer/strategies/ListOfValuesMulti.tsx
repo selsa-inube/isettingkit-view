@@ -1,4 +1,8 @@
-import { formatValue, IRuleDecision } from "@isettingkit/input";
+import {
+  formatValue,
+  IRuleDecision,
+  useValidUntilManagement,
+} from "@isettingkit/input";
 import { ViewMultipleChoicesNew } from "../../ViewMultipleChoices";
 
 interface IListOfValuesMultiStrategyNew {
@@ -14,6 +18,10 @@ const ListOfValuesMultiStrategyNew = ({
   valueData,
   element,
 }: IListOfValuesMultiStrategyNew) => {
+  const { showModal, handleOnClick, stillValid } = useValidUntilManagement(
+    String(element.validUntil),
+  );
+
   const type = element.decisionDataType! || element.conditionDataType;
   const options = Array.isArray(valueData)
     ? valueData.map((item, index) => ({
@@ -23,7 +31,15 @@ const ListOfValuesMultiStrategyNew = ({
       }))
     : [];
   return (
-    <ViewMultipleChoicesNew id={name} label={nameLabel} options={options} />
+    <ViewMultipleChoicesNew
+      id={name}
+      label={nameLabel}
+      options={options}
+      stillValid={stillValid}
+      showModal={showModal}
+      handleOnClick={handleOnClick}
+      validDate={String(element.validUntil)}
+    />
   );
 };
 

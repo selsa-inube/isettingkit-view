@@ -1,12 +1,19 @@
-import { Stack } from "@inubekit/inubekit";
+import { MdOutlineLockClock } from "react-icons/md";
+
+import { Icon, Stack } from "@inubekit/inubekit";
 import { Text } from "@inubekit/inubekit";
 import { formatValue } from "@isettingkit/input";
+import { FilterModal } from "../../ModalFilter";
 
 interface IDynamicViewFieldNew {
   label: string;
   labelType?: string;
   type: ITextfieldInputType;
   valueInput: number | string;
+  stillValid: boolean;
+  showModal: boolean;
+  handleOnClick: () => void;
+  validDate: string;
 }
 
 declare const inputTypes: readonly [
@@ -21,8 +28,16 @@ declare const inputTypes: readonly [
 declare type ITextfieldInputType = (typeof inputTypes)[number];
 
 const DynamicViewFieldNew = (props: IDynamicViewFieldNew) => {
-  const { label, labelType = "condition", type, valueInput } = props;
-
+  const {
+    label,
+    labelType = "condition",
+    type,
+    valueInput,
+    stillValid,
+    handleOnClick,
+    showModal,
+    validDate,
+  } = props;
   return (
     <Stack justifyContent="space-between" alignItems="center" width="100%">
       <Text
@@ -40,6 +55,39 @@ const DynamicViewFieldNew = (props: IDynamicViewFieldNew) => {
       >
         {formatValue(valueInput, type)}
       </Text>
+      {stillValid && (
+        <Icon
+          appearance={"help"}
+          icon={<MdOutlineLockClock onClick={handleOnClick} />}
+        />
+      )}
+      {showModal && (
+        <FilterModal
+          actionButtonLabel="Aceptar"
+          onClick={handleOnClick}
+          onCloseModal={handleOnClick}
+          portalId="portal"
+          title="Vigencia cerrada"
+          buttonAppearance="help"
+          withIconTitle
+          icon={<MdOutlineLockClock />}
+        >
+          <Stack direction="row" gap="4px" wrap="wrap">
+            <Text type="title" size="medium" weight="normal" appearance="gray">
+              {label}
+            </Text>
+            <Text type="title" size="medium" appearance="dark" weight="bold">
+              {formatValue(valueInput, type)}
+            </Text>
+            <Text type="title" size="medium" weight="normal" appearance="gray">
+              {"estará vigente hasta"}
+            </Text>
+            <Text type="title" size="medium" appearance="dark" weight="bold">
+              {validDate}
+            </Text>
+          </Stack>
+        </FilterModal>
+      )}
     </Stack>
   );
 };

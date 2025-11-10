@@ -1,4 +1,4 @@
-import { IRuleDecision } from "@isettingkit/input";
+import { IRuleDecision, useValidUntilManagement } from "@isettingkit/input";
 import { DynamicViewFieldNew } from "../../DynamicViewField";
 
 interface IComparisonStrategyNew {
@@ -14,12 +14,20 @@ const ComparisonStrategyNew = ({
   valueData,
   element,
 }: IComparisonStrategyNew) => {
+  const { showModal, handleOnClick, stillValid } = useValidUntilManagement(
+    String(element.validUntil),
+  );
+
   return (
     <DynamicViewFieldNew
       label={nameLabel}
       labelType={type}
       type={element.decisionDataType! || element.conditionDataType}
       valueInput={valueData as string | number}
+      stillValid={stillValid}
+      showModal={showModal}
+      handleOnClick={handleOnClick}
+      validDate={String(element.validUntil)}
     />
   );
 };

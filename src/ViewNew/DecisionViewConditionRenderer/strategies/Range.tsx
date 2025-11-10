@@ -1,4 +1,4 @@
-import { IRuleDecision } from "@isettingkit/input";
+import { IRuleDecision, useValidUntilManagement } from "@isettingkit/input";
 import { ViewRangeFieldNew } from "../../ViewRangeField";
 
 interface IRangeStrategyNew {
@@ -14,6 +14,10 @@ const RangeStrategyNew = ({
   valueData,
   element,
 }: IRangeStrategyNew) => {
+  const { showModal, handleOnClick, stillValid } = useValidUntilManagement(
+    String(element.validUntil),
+  );
+
   const valueFrom = valueData?.from || "0";
   const valueTo = valueData?.to || "0";
 
@@ -24,6 +28,10 @@ const RangeStrategyNew = ({
       typeInput={element.decisionDataType! || element.conditionDataType}
       valueFrom={valueFrom}
       valueTo={valueTo}
+      stillValid={stillValid}
+      showModal={showModal}
+      handleOnClick={handleOnClick}
+      validDate={String(element.validUntil)}
     />
   );
 };
