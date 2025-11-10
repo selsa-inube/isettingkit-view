@@ -6,7 +6,8 @@ export { DecisionViewConditionRendererNew } from "./ViewNew/DecisionViewConditio
 export { DynamicViewFieldNew } from "./ViewNew/DynamicViewField";
 export { ViewMultipleChoicesNew } from "./ViewNew/ViewMultipleChoices";
 export { ViewRangeFieldNew } from "./ViewNew/ViewRangeField";
-
+export { FilterModal } from "./ModalFilter";
+export type { IFilterModal } from "./ModalFilter/IFilterModal";
 export type { IDecisionViewConditionRenderer } from "./View/DecisionViewConditionRenderer/types";
 export type { IDynamicViewField } from "./View/DynamicViewField";
 export type { IViewMultipleChoices } from "./View/ViewMultipleChoices";
