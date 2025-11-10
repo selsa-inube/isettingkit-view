@@ -28,8 +28,7 @@ Default.args = {
   title: "Filtrar",
   children: (
     <Text>
-      Lorem Ipsum is simply dummy text of the printing and typesetting
-      industry.{" "}
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry.
     </Text>
   ),
 };
