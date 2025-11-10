@@ -2,7 +2,7 @@ import { IButtonAppearance } from "@inubekit/inubekit";
 
 interface IFilterModal {
   actionButtonLabel: string;
-  cancelButtonLabel: string;
+  cancelButtonLabel?: string;
   children: React.ReactNode;
   loading?: boolean;
   onClick: () => void;

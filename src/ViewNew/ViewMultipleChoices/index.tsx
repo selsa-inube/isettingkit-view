@@ -56,19 +56,18 @@ const ViewMultipleChoicesNew = (props: IViewMultipleChoicesNew) => {
       )}
       {showModal && (
         <FilterModal
-          actionButtonLabel={"Aceptar"}
-          cancelButtonLabel={""}
+          actionButtonLabel="Aceptar"
           onClick={handleOnClick}
           onCloseModal={handleOnClick}
-          portalId={"portal"}
-          title={"Vigencia cerrada"}
-          buttonAppearance={"help"}
+          portalId="portal"
+          title="Vigencia cerrada"
+          buttonAppearance="help"
           withIconTitle
           icon={<MdOutlineLockClock />}
         >
           <Stack direction="row" gap="4px" wrap="wrap">
             <Text type="title" size="medium" weight="normal" appearance="gray">
-              {"La tasa efectiva anual"}
+              {label}
             </Text>
 
             {options.map((option) => (

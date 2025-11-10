@@ -16,7 +16,7 @@ import { IFilterModal } from "./IFilterModal";
 const FilterModal = (props: IFilterModal) => {
   const {
     actionButtonLabel,
-    cancelButtonLabel,
+    cancelButtonLabel = "",
     children,
     loading,
     onClick,
