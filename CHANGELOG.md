@@ -1,3 +1,15 @@
+# v0.1.31 (Mon Nov 10 2025)
+
+#### 🐛 Bug Fix
+
+- feat: implement valid until for decisions [#2](https://github.com/selsa-inube/isettingkit-view/pull/2) ([@heber59](https://github.com/heber59))
+
+#### Authors: 1
+
+- Heber  Alvarez  ([@heber59](https://github.com/heber59))
+
+---
+
 # v0.1.30 (Mon Oct 27 2025)
 
 #### 🐛 Bug Fix
