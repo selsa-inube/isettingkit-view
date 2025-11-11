@@ -1,3 +1,15 @@
+# v0.1.32 (Tue Nov 11 2025)
+
+#### 🐛 Bug Fix
+
+- feat: use stop propagation for valid until [#3](https://github.com/selsa-inube/isettingkit-view/pull/3) ([@heber59](https://github.com/heber59))
+
+#### Authors: 1
+
+- Heber  Alvarez  ([@heber59](https://github.com/heber59))
+
+---
+
 # v0.1.31 (Mon Nov 10 2025)
 
 #### 🐛 Bug Fix
