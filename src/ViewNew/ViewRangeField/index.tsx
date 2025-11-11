@@ -69,7 +69,14 @@ const ViewRangeFieldNew = (props: IViewRangeFieldNew) => {
       {stillValid && (
         <Icon
           appearance={"help"}
-          icon={<MdOutlineLockClock onClick={handleOnClick} />}
+          icon={
+            <MdOutlineLockClock
+              onClick={(e) => {
+                e.stopPropagation();
+                handleOnClick();
+              }}
+            />
+          }
         />
       )}
       {showModal && (
