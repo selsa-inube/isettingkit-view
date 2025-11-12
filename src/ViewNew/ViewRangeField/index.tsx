@@ -68,7 +68,8 @@ const ViewRangeFieldNew = (props: IViewRangeFieldNew) => {
       </Text>
       {stillValid && (
         <Icon
-          appearance={"help"}
+          appearance="help"
+          size="16px"
           icon={
             <MdOutlineLockClock
               onClick={(e) => {
