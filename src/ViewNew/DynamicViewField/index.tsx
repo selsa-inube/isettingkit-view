@@ -57,8 +57,8 @@ const DynamicViewFieldNew = (props: IDynamicViewFieldNew) => {
       </Text>
       {stillValid && (
         <Icon
-          appearance={"help"}
-          size="12px"
+          appearance="help"
+          size="16px"
           icon={
             <MdOutlineLockClock
               onClick={(e) => {
