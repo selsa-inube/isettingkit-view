@@ -58,7 +58,10 @@ const FilterModal = (props: IFilterModal) => {
               <Icon
                 appearance="dark"
                 icon={<MdClear />}
-                onClick={onCloseModal}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onCloseModal();
+                }}
                 cursorHover
               />
             </Stack>
@@ -82,7 +85,10 @@ const FilterModal = (props: IFilterModal) => {
           <Button
             appearance={buttonAppearance}
             loading={loading}
-            onClick={onClick}
+            onClick={(e) => {
+              e?.stopPropagation();
+              onClick();
+            }}
             spacing="wide"
             variant="filled"
           >
