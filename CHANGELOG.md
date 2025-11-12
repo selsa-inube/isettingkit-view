@@ -1,3 +1,16 @@
+# v0.1.33 (Wed Nov 12 2025)
+
+#### 🐛 Bug Fix
+
+- feat: make onClick stop propagation [#4](https://github.com/selsa-inube/isettingkit-view/pull/4) ([@heber59](https://github.com/heber59) [@cmarin001](https://github.com/cmarin001))
+
+#### Authors: 2
+
+- Cesar Marin Alfonso ([@cmarin001](https://github.com/cmarin001))
+- Heber  Alvarez  ([@heber59](https://github.com/heber59))
+
+---
+
 # v0.1.32 (Tue Nov 11 2025)
 
 #### 🐛 Bug Fix
