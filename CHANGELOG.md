@@ -1,3 +1,15 @@
+# v0.1.34 (Wed Nov 12 2025)
+
+#### ⚠️ Pushed to `main`
+
+- fix: update icon size in DynamicViewField component ([@cmarin001](https://github.com/cmarin001))
+
+#### Authors: 1
+
+- Cesar Marin Alfonso ([@cmarin001](https://github.com/cmarin001))
+
+---
+
 # v0.1.33 (Wed Nov 12 2025)
 
 #### 🐛 Bug Fix
