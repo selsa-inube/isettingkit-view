@@ -1,3 +1,15 @@
+# v0.1.36 (Fri Nov 14 2025)
+
+#### 🐛 Bug Fix
+
+- fix: adjust propagation on modal [#5](https://github.com/selsa-inube/isettingkit-view/pull/5) ([@heber59](https://github.com/heber59))
+
+#### Authors: 1
+
+- Heber  Alvarez  ([@heber59](https://github.com/heber59))
+
+---
+
 # v0.1.35 (Wed Nov 12 2025)
 
 #### ⚠️ Pushed to `main`
