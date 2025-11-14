@@ -14,7 +14,7 @@ const ComparisonStrategyNew = ({
   valueData,
   element,
 }: IComparisonStrategyNew) => {
-  const { showModal, handleOnClick, stillValid } = useValidUntilManagement(
+  const { showModal, handleOnClick } = useValidUntilManagement(
     String(element.validUntil),
   );
 
@@ -24,7 +24,7 @@ const ComparisonStrategyNew = ({
       labelType={type}
       type={element.decisionDataType! || element.conditionDataType}
       valueInput={valueData as string | number}
-      stillValid={stillValid}
+      stillValid={element.validUntil ? true : false}
       showModal={showModal}
       handleOnClick={handleOnClick}
       validDate={String(element.validUntil)}

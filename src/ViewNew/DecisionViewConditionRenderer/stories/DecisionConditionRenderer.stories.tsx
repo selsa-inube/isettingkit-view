@@ -16,7 +16,7 @@ const element = {
   listOfPossibleValues: { list: ["Option1", "200", "Option3"] },
   howToSetTheCondition: ValueHowToSetUp.LIST_OF_VALUES,
   conditionDataType: ValueDataType.PERCENTAGE,
-  validUntil: "2025-11-11",
+  validUntil: "2024-11-11",
 };
 
 const ListOfValues: Story = {

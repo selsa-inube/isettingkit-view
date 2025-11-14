@@ -14,7 +14,7 @@ const RangeStrategyNew = ({
   valueData,
   element,
 }: IRangeStrategyNew) => {
-  const { showModal, handleOnClick, stillValid } = useValidUntilManagement(
+  const { showModal, handleOnClick } = useValidUntilManagement(
     String(element.validUntil),
   );
 
@@ -28,7 +28,7 @@ const RangeStrategyNew = ({
       typeInput={element.decisionDataType! || element.conditionDataType}
       valueFrom={valueFrom}
       valueTo={valueTo}
-      stillValid={stillValid}
+      stillValid={element.validUntil ? true : false}
       showModal={showModal}
       handleOnClick={handleOnClick}
       validDate={String(element.validUntil)}

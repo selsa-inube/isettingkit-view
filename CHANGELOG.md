@@ -32,7 +32,7 @@
 #### Authors: 2
 
 - Cesar Marin Alfonso ([@cmarin001](https://github.com/cmarin001))
-- Heber  Alvarez  ([@heber59](https://github.com/heber59))
+- Heber Alvarez ([@heber59](https://github.com/heber59))
 
 ---
 
@@ -44,7 +44,7 @@
 
 #### Authors: 1
 
-- Heber  Alvarez  ([@heber59](https://github.com/heber59))
+- Heber Alvarez ([@heber59](https://github.com/heber59))
 
 ---
 
@@ -56,7 +56,7 @@
 
 #### Authors: 1
 
-- Heber  Alvarez  ([@heber59](https://github.com/heber59))
+- Heber Alvarez ([@heber59](https://github.com/heber59))
 
 ---
 
@@ -73,7 +73,7 @@
 #### Authors: 2
 
 - Cesar Marin Alfonso ([@cmarin001](https://github.com/cmarin001))
-- Heber  Alvarez  ([@heber59](https://github.com/heber59))
+- Heber Alvarez ([@heber59](https://github.com/heber59))
 
 ---
 

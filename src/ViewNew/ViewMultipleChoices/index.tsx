@@ -50,7 +50,7 @@ const ViewMultipleChoicesNew = (props: IViewMultipleChoicesNew) => {
       </Stack>
       {stillValid && (
         <Icon
-          appearance="help"
+          appearance={"help"}
           size="20px"
           icon={
             <MdOutlineLockClock

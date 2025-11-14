@@ -18,7 +18,7 @@ const ListOfValuesMultiStrategyNew = ({
   valueData,
   element,
 }: IListOfValuesMultiStrategyNew) => {
-  const { showModal, handleOnClick, stillValid } = useValidUntilManagement(
+  const { showModal, handleOnClick } = useValidUntilManagement(
     String(element.validUntil),
   );
 
@@ -35,7 +35,7 @@ const ListOfValuesMultiStrategyNew = ({
       id={name}
       label={nameLabel}
       options={options}
-      stillValid={stillValid}
+      stillValid={element.validUntil ? true : false}
       showModal={showModal}
       handleOnClick={handleOnClick}
       validDate={String(element.validUntil)}
