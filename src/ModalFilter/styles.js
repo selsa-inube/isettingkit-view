@@ -14,4 +14,6 @@ const StyledModal = styled.div`
   box-sizing: border-box;
 `;
 
-export { StyledModal };
+const StyledModalWrapper = styled.div``;
+
+export { StyledModal, StyledModalWrapper };

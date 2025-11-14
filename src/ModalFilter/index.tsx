@@ -10,7 +10,7 @@ import {
   useMediaQuery,
 } from "@inubekit/inubekit";
 
-import { StyledModal } from "./styles";
+import { StyledModal, StyledModalWrapper } from "./styles";
 import { IFilterModal } from "./IFilterModal";
 
 const FilterModal = (props: IFilterModal) => {
@@ -41,62 +41,66 @@ const FilterModal = (props: IFilterModal) => {
   }
 
   return createPortal(
-    <Blanket>
-      <StyledModal $smallScreen={isMobile}>
-        <Stack direction="column" gap="16px">
-          <Stack alignContent="center" justifyContent="space-between">
-            <Stack gap="8px">
-              {withIconTitle && (
-                <Icon appearance={buttonAppearance} icon={icon} />
-              )}
-              <Text appearance="dark" size="small" type="headline">
-                {title}
-              </Text>
+    <StyledModalWrapper
+      onClick={(e: React.MouseEvent<HTMLDivElement>) => e.stopPropagation()}
+    >
+      <Blanket>
+        <StyledModal $smallScreen={isMobile}>
+          <Stack direction="column" gap="16px">
+            <Stack alignContent="center" justifyContent="space-between">
+              <Stack gap="8px">
+                {withIconTitle && (
+                  <Icon appearance={buttonAppearance} icon={icon} />
+                )}
+                <Text appearance="dark" size="small" type="headline">
+                  {title}
+                </Text>
+              </Stack>
+              <Stack alignItems="center">
+                {withText && <Text>Cerrar</Text>}
+                <Icon
+                  appearance="dark"
+                  icon={<MdClear />}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    onCloseModal();
+                  }}
+                  cursorHover
+                />
+              </Stack>
             </Stack>
-            <Stack alignItems="center">
-              {withText && <Text>Cerrar</Text>}
-              <Icon
-                appearance="dark"
-                icon={<MdClear />}
-                onClick={(e) => {
-                  e.stopPropagation();
-                  onCloseModal();
-                }}
-                cursorHover
-              />
-            </Stack>
+            {withDivider && <Divider />}
           </Stack>
-          {withDivider && <Divider />}
-        </Stack>
-        {children}
-        <Stack gap="20px" justifyContent="flex-end">
-          {withCancelButton && (
-            <Button
-              appearance="gray"
-              onClick={onCloseModal}
-              iconBefore={<MdOutlineFilterAltOff />}
-              spacing="wide"
-              variant="outlined"
-            >
-              {cancelButtonLabel}
-            </Button>
-          )}
+          {children}
+          <Stack gap="20px" justifyContent="flex-end">
+            {withCancelButton && (
+              <Button
+                appearance="gray"
+                onClick={onCloseModal}
+                iconBefore={<MdOutlineFilterAltOff />}
+                spacing="wide"
+                variant="outlined"
+              >
+                {cancelButtonLabel}
+              </Button>
+            )}
 
-          <Button
-            appearance={buttonAppearance}
-            loading={loading}
-            onClick={(e) => {
-              e?.stopPropagation();
-              onClick();
-            }}
-            spacing="wide"
-            variant="filled"
-          >
-            {actionButtonLabel}
-          </Button>
-        </Stack>
-      </StyledModal>
-    </Blanket>,
+            <Button
+              appearance={buttonAppearance}
+              loading={loading}
+              onClick={(e) => {
+                e?.stopPropagation();
+                onClick();
+              }}
+              spacing="wide"
+              variant="filled"
+            >
+              {actionButtonLabel}
+            </Button>
+          </Stack>
+        </StyledModal>
+      </Blanket>
+    </StyledModalWrapper>,
     node,
   );
 };
