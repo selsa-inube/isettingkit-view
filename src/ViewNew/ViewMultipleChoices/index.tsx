@@ -51,6 +51,7 @@ const ViewMultipleChoicesNew = (props: IViewMultipleChoicesNew) => {
       {stillValid && (
         <Icon
           appearance={"help"}
+          size="20px"
           icon={
             <MdOutlineLockClock
               onClick={(e) => {
