@@ -1,3 +1,15 @@
+# v0.1.38 (Tue Dec 23 2025)
+
+#### ⚠️ Pushed to `main`
+
+- chore: update input dependencies ([@cmarin001](https://github.com/cmarin001))
+
+#### Authors: 1
+
+- Cesar Marin Alfonso ([@cmarin001](https://github.com/cmarin001))
+
+---
+
 # v0.1.37 (Fri Dec 19 2025)
 
 #### ⚠️ Pushed to `main`
