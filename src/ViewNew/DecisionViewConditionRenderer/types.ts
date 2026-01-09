@@ -18,6 +18,7 @@ interface IDecisionViewConditionRendererNew {
   element: IRuleDecision;
   type?: "decision" | "condition";
   valueData: string | string[] | number | IValue | undefined;
+  editionMode?: "classic" | "versioned";
 }
 
 export type { IDecisionViewConditionRendererNew, IValue };

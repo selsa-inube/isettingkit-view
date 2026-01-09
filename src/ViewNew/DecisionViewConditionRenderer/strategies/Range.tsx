@@ -6,6 +6,7 @@ interface IRangeStrategyNew {
   type?: "decision" | "condition";
   valueData: { from?: string; to?: string } | undefined;
   element: IRuleDecision;
+  editionMode?: "classic" | "versioned";
 }
 
 const RangeStrategyNew = ({
@@ -13,6 +14,7 @@ const RangeStrategyNew = ({
   type,
   valueData,
   element,
+  editionMode,
 }: IRangeStrategyNew) => {
   const { showModal, handleOnClick } = useValidUntilManagement(
     String(element.validUntil),
@@ -32,6 +34,7 @@ const RangeStrategyNew = ({
       showModal={showModal}
       handleOnClick={handleOnClick}
       validDate={String(element.validUntil)}
+      showValidityIcon={editionMode === "versioned"}
     />
   );
 };

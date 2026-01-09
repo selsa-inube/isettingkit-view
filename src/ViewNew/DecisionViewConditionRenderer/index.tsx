@@ -5,7 +5,7 @@ import { normalizeValueUseNew } from "./utils/normalizeValueUse";
 const DecisionViewConditionRendererNew = (
   props: IDecisionViewConditionRendererNew,
 ) => {
-  const { element, valueData, type } = props;
+  const { element, valueData, type, editionMode } = props;
   const normalizedValueUse = normalizeValueUseNew(
     element.howToSetTheDecision! || element.howToSetTheCondition,
   );
@@ -16,7 +16,6 @@ const DecisionViewConditionRendererNew = (
     );
     return null;
   }
-
   const strategy = getStrategyNew(normalizedValueUse as StrategyType);
 
   if (!strategy) {
@@ -33,6 +32,7 @@ const DecisionViewConditionRendererNew = (
       valueData: unknown;
       type?: string;
       element: typeof element;
+      editionMode?: string;
     }>;
 
     return (
@@ -42,6 +42,7 @@ const DecisionViewConditionRendererNew = (
         valueData={valueData}
         type={type}
         element={element}
+        editionMode={editionMode}
       />
     );
   } catch (error) {

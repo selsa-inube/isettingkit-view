@@ -6,6 +6,7 @@ interface IComparisonStrategyNew {
   type?: "decision" | "condition";
   valueData: string | number | undefined;
   element: IRuleDecision;
+  editionMode?: "classic" | "versioned";
 }
 
 const ComparisonStrategyNew = ({
@@ -13,6 +14,7 @@ const ComparisonStrategyNew = ({
   type,
   valueData,
   element,
+  editionMode,
 }: IComparisonStrategyNew) => {
   const { showModal, handleOnClick } = useValidUntilManagement(
     String(element.validUntil),
@@ -24,6 +26,7 @@ const ComparisonStrategyNew = ({
       labelType={type}
       type={element.decisionDataType! || element.conditionDataType}
       valueInput={valueData as string | number}
+      showValidityIcon={editionMode === "versioned"}
       stillValid={element.validUntil ? true : false}
       showModal={showModal}
       handleOnClick={handleOnClick}

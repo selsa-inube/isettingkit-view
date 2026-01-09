@@ -10,6 +10,7 @@ interface IListOfValuesMultiStrategyNew {
   nameLabel: string;
   valueData: string[] | undefined;
   element: IRuleDecision;
+  editionMode?: "classic" | "versioned";
 }
 
 const ListOfValuesMultiStrategyNew = ({
@@ -17,6 +18,7 @@ const ListOfValuesMultiStrategyNew = ({
   nameLabel,
   valueData,
   element,
+  editionMode,
 }: IListOfValuesMultiStrategyNew) => {
   const { showModal, handleOnClick } = useValidUntilManagement(
     String(element.validUntil),
@@ -39,6 +41,7 @@ const ListOfValuesMultiStrategyNew = ({
       showModal={showModal}
       handleOnClick={handleOnClick}
       validDate={String(element.validUntil)}
+      showValidityIcon={editionMode === "versioned"}
     />
   );
 };

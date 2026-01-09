@@ -11,6 +11,7 @@ interface IDynamicViewFieldNew {
   type: ITextfieldInputType;
   valueInput: number | string;
   stillValid: boolean;
+  showValidityIcon?: boolean;
   showModal: boolean;
   handleOnClick: () => void;
   validDate: string;
@@ -34,10 +35,12 @@ const DynamicViewFieldNew = (props: IDynamicViewFieldNew) => {
     type,
     valueInput,
     stillValid,
+    // showValidityIcon = true,
     handleOnClick,
     showModal,
     validDate,
   } = props;
+
   return (
     <Stack justifyContent="space-between" alignItems="center" width="100%">
       <Text
@@ -55,6 +58,7 @@ const DynamicViewFieldNew = (props: IDynamicViewFieldNew) => {
       >
         {formatValue(valueInput, type)}
       </Text>
+      {/* {stillValid && showValidityIcon && ( */}
       {stillValid && (
         <Icon
           appearance={"help"}

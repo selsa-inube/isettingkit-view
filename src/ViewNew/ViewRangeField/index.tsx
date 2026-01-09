@@ -14,6 +14,7 @@ interface IViewRangeFieldNew {
   showModal: boolean;
   handleOnClick: () => void;
   validDate: string;
+  showValidityIcon?: boolean;
 }
 
 declare const inputTypes: readonly [
@@ -38,6 +39,7 @@ const ViewRangeFieldNew = (props: IViewRangeFieldNew) => {
     handleOnClick,
     showModal,
     validDate,
+    // showValidityIcon = true,
   } = props;
 
   const label = `De ${formatValue(valueFrom, typeInput)} a ${formatValue(valueTo, typeInput)}`;
@@ -66,6 +68,7 @@ const ViewRangeFieldNew = (props: IViewRangeFieldNew) => {
       >
         {label}
       </Text>
+      {/* {stillValid && showValidityIcon && ( */}
       {stillValid && (
         <Icon
           appearance="help"

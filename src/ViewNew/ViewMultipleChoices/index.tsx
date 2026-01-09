@@ -18,6 +18,7 @@ interface IViewMultipleChoicesNew {
   showModal: boolean;
   handleOnClick: () => void;
   validDate: string;
+  showValidityIcon?: boolean;
 }
 
 const ViewMultipleChoicesNew = (props: IViewMultipleChoicesNew) => {
@@ -29,6 +30,7 @@ const ViewMultipleChoicesNew = (props: IViewMultipleChoicesNew) => {
     handleOnClick,
     showModal,
     validDate,
+    // showValidityIcon = true,
   } = props;
 
   return (
@@ -48,6 +50,7 @@ const ViewMultipleChoicesNew = (props: IViewMultipleChoicesNew) => {
           </Stack>
         ))}
       </Stack>
+      {/* {stillValid && showValidityIcon && ( */}
       {stillValid && (
         <Icon
           appearance={"help"}
