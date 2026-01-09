@@ -1,3 +1,15 @@
+# v0.1.39 (Fri Jan 09 2026)
+
+#### ⚠️ Pushed to `main`
+
+- feat: extend the component in order to support hidding behavior for locked icon ([@cmarin001](https://github.com/cmarin001))
+
+#### Authors: 1
+
+- Cesar Marin Alfonso ([@cmarin001](https://github.com/cmarin001))
+
+---
+
 # v0.1.38 (Tue Dec 23 2025)
 
 #### ⚠️ Pushed to `main`
