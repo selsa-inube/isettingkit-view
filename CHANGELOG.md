@@ -1,3 +1,15 @@
+# v0.1.40 (Tue Mar 17 2026)
+
+#### 🐛 Bug Fix
+
+- fix: adjust z index for modal of term [#6](https://github.com/selsa-inube/isettingkit-view/pull/6) ([@heber59](https://github.com/heber59))
+
+#### Authors: 1
+
+- Heber  Alvarez  ([@heber59](https://github.com/heber59))
+
+---
+
 # v0.1.39 (Fri Jan 09 2026)
 
 #### ⚠️ Pushed to `main`
