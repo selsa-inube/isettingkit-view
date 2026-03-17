@@ -21,7 +21,6 @@ const ListOfValuesMultiStrategyNew = ({
   const { showModal, handleOnClick } = useValidUntilManagement(
     String(element.validUntil),
   );
-
   const type = element.decisionDataType! || element.conditionDataType;
   const options = Array.isArray(valueData)
     ? valueData.map((item, index) => ({
