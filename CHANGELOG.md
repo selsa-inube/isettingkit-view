@@ -1,3 +1,15 @@
+# v0.1.42 (Fri Mar 20 2026)
+
+#### 🐛 Bug Fix
+
+- fix: adjusit dependencies [#8](https://github.com/selsa-inube/isettingkit-view/pull/8) ([@heber59](https://github.com/heber59))
+
+#### Authors: 1
+
+- Heber  Alvarez  ([@heber59](https://github.com/heber59))
+
+---
+
 # v0.1.41 (Fri Mar 20 2026)
 
 #### 🐛 Bug Fix
